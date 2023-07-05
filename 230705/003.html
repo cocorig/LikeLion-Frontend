@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css 상속</title>
+</head>
+    <style>
+        section{
+            color: pink;
+            border: 1px solid black;
+        }
+        /* border속성은 상속받지 않지만 받고싶다면 inherit */
+        h1{ border: inherit;}
+    </style>
+<body>
+    <section>
+        <h1>Hello</h1>
+        <h2>Hello</h2>
+        <p>Hello</p> 
+        <!-- form괸력 테그들은 브라우저별 적용된 스타일이 있기 때문에 상속받지 않기도 한다. -->
+        <button>Btn</button>
+        <input type="text" value="hello">
+    </section>
+    <section>
+        <h1>section h1</h1>
+        <h2>section section h2</h2>
+        <section>
+            <h1>section section h1</h1>
+        <section>
+            <h1>section section section h1</h1>
+        </section>
+        </section>
+    </section>
+</body>
+</html>

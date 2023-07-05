@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css 선택자</title>
+</head>
+    <style>
+        /* 자식 선택자 (공백)으로 구분*/
+            section p{
+                border: 1px solid blueviolet;
+            }
+            /* 자식 선택자(>) */
+            section>p{
+                border: 1px solid tomato;
+            }
+            /* 일반 형제 선택자(~) 뒤에 나오는 형제만 선택*/
+            h1 ~ p{
+                color: aqua;
+            }
+
+            h2 ~ p {
+                color: brown;
+            }
+            /* 인접 형제 선택자(+)  바로 뒤에 인접한 형제만 선택*/
+            h1 + p{
+                background-color: skyblue;
+            }
+            /* .sect 하위 자식 중 text clsss를 가진 태그 */
+            .sect .text {
+                font-size: 50px;
+            }
+            /* class가 중첩돨때 위의 선택자와 다름! 주의하자 */
+            .sect.content{
+                background-color: orange;
+            }   
+    </style>
+<body>
+    <h1>안녕</h1>
+    <p>하나</p> 
+    <p>둘</p>
+    <p>셋</p>
+    <!-- 기준 -->
+    <section class="sect content">
+        <h2 class="text">하이</h2>
+        <div> 
+            <p>넷</p>
+        </div>
+        <p>다섯</p>
+        <p>여섯</p>
+    </section>
+
+    <p>일곱</p>
+    <p>여덟</p>
+    <p>아홉</p>
+
+</body>
+</html>
+
+<!-- 공백이 하위의 개념 -->
+<!-- .sect .text{
+    background-color: aquamarine;
+}
+.sect.text{ 
+    background-color: blueviolet;
+} -->
