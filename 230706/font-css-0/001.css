@@ -1,0 +1,38 @@
+body{
+    font-family: 'Noto Sans KR', sans-serif;
+
+}
+/* 눈누 폰트 */
+@font-face {
+    font-family: "Pretendard-Regular";
+    src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff") format("woff");
+    font-weight: 400;
+    font-style: normal;
+}
+
+/* h1,h2는 기본적으로 굵기가 설정 돼있기 때문에 초기화 */
+h1,h2{
+    font-weight: normal;
+}
+h1{
+    color: tomato;
+    border: 1px solid salmon;
+}
+
+/* 부모에 color 값이 있다면 상속으로 처리 , 유지보수 */
+strong{
+    border-bottom: 5px solid currentColor; 
+}
+/* color는 자동으로 상속이 되지만 border는 상속받고 싶다면  inherit*/
+button{
+    border: inherit;
+}
+
+h2{
+    color: blue;
+
+}
+/* 눈누 폰트 삽입 */
+p{
+    font-family: Pretendard-Regular, "Times New Roman", Dotum, "돋움", sans-serif;
+}

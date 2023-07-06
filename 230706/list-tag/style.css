@@ -1,0 +1,20 @@
+ul {
+    list-style: circle;
+    list-style-position: inside;
+}
+ol li::before{
+    content: ' ';
+    display:block;
+    width:0.3em;
+    height:0.3em;
+    transform:rotate(45deg);
+    border:2px solid royalblue;
+    border-width: 2px 2px 0 0;
+    position:absolute;
+    left:0;
+    top:0.4em;
+}
+ol{
+    list-style: none;
+    padding:0
+}

@@ -1,0 +1,8 @@
+p::before{
+    content: '안녕 가상요소 before';
+}
+p::after{
+    content: '안녕 가상요소 after';
+}
+
+/* 빈 태그(닫는 태그가 없는)에선 적용할 수 없다 */

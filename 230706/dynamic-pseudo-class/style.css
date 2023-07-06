@@ -1,0 +1,25 @@
+a{
+    text-decoration: none;
+    transition:  all 0.3s;
+}
+a:link {
+
+    color: skyblue;
+    }
+
+a:visited {
+color: red;
+}
+
+a:active {
+background-color: aqua;
+}
+
+a:focus {
+background-color: salmon;
+font-size: 0.5em
+}
+
+a:hover {
+font-size: 2em;
+}

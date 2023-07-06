@@ -1,0 +1,19 @@
+
+/* 전역 변수 선언  */
+:root{
+    --main-color : pink;
+    --pane-padding : 4px 40px;
+    --point-color : red;
+}
+
+.color1{
+    color: var(--main-color);
+    padding: var(--pane-padding);
+}
+button{
+    color: var(--main-color);
+}
+
+.color2{
+    color: var(--point-color);
+}

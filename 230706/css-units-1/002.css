@@ -1,0 +1,31 @@
+.box-rem{
+
+    display: inline-block;
+    box-sizing: border-box;
+    background-color: pink;
+    /* padding : 64px */
+    padding: 4rem;
+    /* font-size :  160px*/
+    font-size: 20rem;
+    font-weight: 900;
+    
+}
+/* fontsize를 두베로 늘렸을때 padding은 rem으로 지정했기때문에 padding의 크기가 커지지 않는다.
+rem은 최상위 요소에게만 영향을 받으나까! font-size 기준으로 디자인이 된 여백이라면 rem으로! */
+
+
+/* padding을 em으로 지정했다면  */
+.box-em{
+    display: inline-block;
+    box-sizing: border-box;
+    background-color: rgb(151, 84, 95);
+     /* padding : 64px */
+    padding: 0.4em;
+    /* font-size :  160px*/
+    font-size: 20rem;
+    font-weight: 900;
+    
+}
+/* padding이 0.4em일때 해당 padding값은 font-size에  0.4배로  계산.
+따라서 font-size가 변경이 된다면 padding도 같이 크기가 달라지기 때문에 좀 더 반응적으로 조정
+*/

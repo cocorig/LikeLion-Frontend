@@ -1,0 +1,32 @@
+p{
+    font-family: 'Noto Sans KR', sans-serif;
+    font-weight:bold;   
+    text-align: justify;
+    line-height: 1.5;
+    /* 여러줄 말줄임 처리 */
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+
+}
+/* p태그의 첫문단의 첫 글자 */
+p::first-letter{
+	text-transform: uppercase;	
+
+}
+.fes7{
+    text-transform: capitalize;
+    text-decoration: orange underline wavy 3px;
+    box-shadow: 1px 1px 3px rgb(169, 168, 168);
+}
+.tx-shadow{
+    /* 32px */
+    font-size: 2rem; 
+    /* text에 그림자 */
+    text-shadow: 10px -10px 3px rgb(169, 168, 168);
+    text-align: center;
+    letter-spacing: 1em;
+
+}
+

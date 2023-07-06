@@ -1,0 +1,22 @@
+body{
+    font-family: 'Martian Mono', monospace;
+    
+}
+.title{
+    width: 40%;
+    text-align: center;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 30px 90px;
+    margin: 10em auto 0 auto;
+    padding: 2em;
+    border-radius: 8px; 
+    
+}
+
+h1{
+    font-weight: normal;
+    text-shadow: 10px 4px 3px rgb(169, 168, 168);;
+}
+span{
+    font-weight: 700;
+    text-decoration:  pink underline solid 3px;
+}
