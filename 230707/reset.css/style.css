@@ -1,0 +1,11 @@
+body{
+    background-color: pink;
+}
+
+h1{
+    font-weight: normal;
+}
+img{
+    vertical-align:top;
+    margin: auto;
+}

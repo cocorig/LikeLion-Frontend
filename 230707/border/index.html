@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>border</title>
+<style>
+    body{
+        margin: 0;
+        padding: 0;
+
+    }
+    div{
+        width: 100px;
+        height: 100px;
+        background-color: royalblue;
+    }
+    /* .box1 {
+    width: 100px;
+    height: 100px;
+    background-color: royalblue;
+    box-sizing: border-box;
+    /* width = 콘텐츠 너비 + border + padding , contnet  = 80*/
+    /* border: 10px solid pink;
+    border-radius: 10px;
+    } */ 
+
+
+    .box1{
+        border-radius: 50%;
+    }
+    .box2{
+        border-radius: 0.5em;
+    }
+    .box3{
+        /* border-top-left-radius : 100%; */
+        border-radius: 100% 0 0 0;
+    }
+    .box4{
+        /* border-top-left-radius: 100%;
+        border-bottom-right-radius: 100%; */
+        border-radius: 100% 0 ;
+    }
+    .box5{
+        /* border-bottom-left-radius: 50%;
+        border-top-right-radius: 50%; */
+        border-radius: 0 50%;
+    }
+    .box6{
+        /* 반원을 그릴때의 수치는 원의 반지름 값을 넣어줘야 한다. */
+        height: 50px;
+        border-radius: 50px 50px 0 0;
+    }
+
+    </style>
+    </head>
+
+    <body>
+
+    
+        <div class="box1">
+        </div>
+        <div class="box2">
+        </div>
+        <div class="box3">
+        </div>
+        <div class="box4">
+        
+        </div>
+        <div class="box5">
+        
+        </div>
+        <div class="box6">
+        </div>
+
+
+    </body>
+
+    </html>

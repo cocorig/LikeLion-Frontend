@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>width</title>
+<style>
+    p {
+    background: pink;
+    }
+/*컨텐츠 내용의 선호 너비 */
+    .max-content {
+    width: max-content;
+    }
+/* 최소 너비 */
+    .min-content {
+    width: min-content;
+    }
+    div{
+        width: 20em;
+        border: 1px solid black;
+        padding: 20px;
+
+    }
+/* 부모요소의 가용범위 내에서 알아서 최대크기로 width를 조정 */
+    .fit-content {
+    width: fit-content;
+    }
+
+    .parent {
+    width: 500px;
+    background: gray;
+    }
+
+    .parent p {
+    width: 300px;
+    /* 가운데 배치 */
+    margin: auto; 
+    /* 오른쪽 배치 */
+    /* margin: auto 0 auto auto; */
+    }
+</style>
+</head>
+
+<body>
+
+
+<p>
+    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nemo molestias animi error nobis ut sapiente magni ipsa
+    eaque eveniet voluptatibus illo alias ex, at aut enim pariatur, tenetur harum obcaecati?
+
+</p>
+
+<p class="max-content">
+    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nemo molestias animi error nobis ut sapiente magni ipsa
+    eaque eveniet voluptatibus illo alias ex, at aut enim pariatur, tenetur harum obcaecati?
+
+</p>
+<p class="min-content">
+    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nemo molestias animi error nobis ut sapiente magni ipsa
+    eaque eveniet voluptatibus illo alias ex, at aut enim pariatur, tenetur harum obcaecati?
+
+</p>
+<div>
+    <p class="fit-content">
+        Lorem ipsum dolor sit
+    </p>
+    
+    <p class="fit-content">
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nemo molestias animi error nobis ut sapiente magni ipsa
+        eaque eveniet voluptatibus illo alias ex, at aut enim pariatur, tenetur harum obcaecati?
+    </p>
+</div>
+
+<div class="parent">
+    <p>Lorem ipsum dolor sit</p>
+</div>
+
+</body>
+
+</html>

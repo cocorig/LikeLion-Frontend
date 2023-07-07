@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>background</title>
+    <style>
+        body{
+            height: 1000px;
+        }
+        div {
+            height: 400px;
+            overflow: auto;
+            background: scroll url(https://github.com/stronger-deer/myBlog/blob/main/img/main-visual.jpg?raw=true);
+            font-size: 3em;
+            /* 순서가 중요 후자우선순위 적용 scroll이 기본값-> fixed */
+            background-attachment: fixed;
+            /* 뷰포트 고정 */
+            border: 40px dotted blue;
+            padding: 20px;
+            background-clip: border-box;
+            background-origin: border-box;
+        }
+    </style>
+    </head>
+
+    <body>
+    <div>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Praesentium ut enim suscipit, alias libero dolor reiciendis provident tempore. Labore suscipit nostrum et voluptate. Possimus, optio nemo illum facilis iusto cupiditate.
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Praesentium ut enim suscipit, alias libero dolor reiciendis provident tempore. Labore suscipit nostrum et voluptate. Possimus, optio nemo illum facilis iusto cupiditate.  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Praesentium ut enim suscipit, alias libero dolor reiciendis provident tempore. Labore suscipit nostrum et voluptate. 
+    </div>
+
+
+</body>
+
+</html>
