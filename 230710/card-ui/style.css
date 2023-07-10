@@ -1,0 +1,96 @@
+  /* 초기화 */
+  body,
+  h1,
+  h2,
+  p {
+    margin: 0;
+  }
+  h1,
+  h2 {
+    font: inherit;
+  }
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+/* font 적용 */
+  @font-face {
+    font-family: 'Pretendard-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff')
+      format('woff');
+    font-weight: 400;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'Pretendard-Bold';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Bold.woff')
+      format('woff');
+    font-weight: 700;
+    font-style: normal;
+  }
+
+  body {
+    font-family: 'Pretendard-Regular', sans-serif;
+    color: #29363d;
+  }
+/* article */
+  .card-ui {
+    width: 288px;
+    border-radius: 8px;
+    box-shadow: 2px 2px 8px 0px rgba(0, 0, 0, 0.1);
+    display: inline-block;
+
+
+    /* overflow로 img부분도 boder-radius를 적용할 순 있지만,outline이 들어간 요소들이나, 밖으로 빠져나간 요소들,자식요소들이 짤릴 수 있기 때문에 추천하진 않는다.
+    중복으로 주더라도  border-radius를 적용하자.  */
+    /* overflow: hidden; */
+  }
+  /* img */
+  .card-ui img {
+    width: 100%;
+              /* img 가로/세로 */
+    aspect-ratio: 288/196;
+    /* 잘리지않게 */
+    object-fit: cover;
+
+  }
+
+  .card-ui .text-group {
+   /* top:24px, left,right:16px, bottom:16px */
+    padding: 24px 16px 16px;
+  }
+
+  .card-ui h2 {
+    font-family: 'Pretendard-Bold';
+    /*text가 길어지는 경우를 생각하자.한 줄의 텍스트만 표시하는 컨테이너 */
+    /* 글자 수가 넘치면 잘라준다*/
+    overflow: hidden; 
+    /*너비가 넘치면 자동 줄바꿈이 되는것을 막아준다. */
+    white-space: nowrap;
+      /*텍스트가 넘칠경우, 텍스트 말줄임 ..을 표시 */
+    text-overflow: ellipsis;
+  }
+
+  .card-ui .content {
+    font-size: 14px;
+    color: #5a6a72;
+    margin: 16px 0;
+
+    /* 여러줄을 자를때 */
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    /* 두 줄로 제한, 추가 행은 잘린다. */
+    -webkit-line-clamp: 2;
+    /* 글꼴 크기의 1.6배 */
+    line-height: 1.6;
+
+    /* 높이  =   글꼴 크기 * 줄 높이 * 줄수 를 계산해 두 줄의 텍스트를 표시하는데 필요한 총 높이를 구한다. 글자 수가 적어도 일정한 높이를 유지할 수 있다.*/
+    height: calc(1em * 1.6 * 2);
+  }
+  
+  .card-ui .read {
+    text-decoration: underline;
+    font-family: 'Pretendard-Bold';
+    font-size: 14px;
+  }
