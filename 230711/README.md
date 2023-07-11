@@ -230,7 +230,7 @@ flex-grow와 반대속성 , 줄이다는 뜻
 ### item B에 flex-shrink: 0을 줬을때 (flex-basis: 300px로 설정)
 
  예시 )
- <img src="https://velog.velcdn.com/images/cocorig/post/24825397-ef30-43ac-9320-eb8515a505d8/image.gif" width="100%">
+ <img src="https://github.com/cocorig/LikeLion-Frontend/assets/95855640/93c30210-11e7-47d8-9df0-72281fc4b94c" width="100%">
  
  
 
@@ -245,7 +245,8 @@ flex-shrink: 0 => 줄어들지 않게 하겠다는 뜻
 
 
 <br/>
-  <img src="https://velog.velcdn.com/images/cocorig/post/e3c2c672-12db-4af3-ad6a-32de58011ec8/image.gif" width="100%">
+
+  <img src="https://github.com/cocorig/LikeLion-Frontend/assets/95855640/5208226a-b809-4157-901a-f060b0b1d139" width="100%">
 
 
   - item A는 2/3  , item B는 1/3 만큼의 공간 분담을 하기 때문에 여백을 더 많이 가진 A가  item B보다  더 빨리 줄어드는 걸 볼 수 있다.
