@@ -1,0 +1,107 @@
+
+/* 초기화 */
+body,
+p {
+    margin: 0;
+    }
+    a {
+    color: inherit;
+    text-decoration: none;
+    }
+
+    body {
+    font-family: 'SpoqaHanSansNeo-Regular', sans-serif;
+}
+
+.a11y-hidden {
+    clip: rect(1px, 1px, 1px, 1px);
+    clip-path: inset(50%);
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+}
+/* font 적용 */
+
+
+@font-face {
+    font-family: 'SpoqaHanSansNeo-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/SpoqaHanSansNeo-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'SpoqaHanSansNeo-Bold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/SpoqaHanSansNeo-Regular.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+}
+.box{
+    padding: 30px 25px;
+}
+.login-container{
+    /* background: url(../login/img/log-in-area.png) no-repeat 0 0 / 350px 140px;
+    background-repeat: no-repeat;
+    background-position: -1px -1px;
+    background-size: 350px 140px;  */
+    width: 350px;
+    height: 140px;
+    border-radius: 5px;
+    border: 1px solid #DBDBDB;
+    background: #FFF;
+    padding: 18px 15px;
+    box-sizing: border-box;
+    font-size: 12px;
+}
+
+.btn-login{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 40px;
+    border-radius: 4px;
+    background: #711BFF;
+    font-family: 'SpoqaHanSansNeo-Bold';
+    color: #FFF;
+    margin: 16px 0;
+    /* display: block;
+    text-align: center;
+    padding: 11px 0; */
+}
+.btn-login img{
+    width: 64px;
+    margin-right: 3px;
+    /* vertical-align: middle; */
+}
+
+.login-links{
+    display: flex;
+    justify-content: space-between;
+    color: #767676;
+}
+.login-link{
+    display: flex;
+}
+.login-links a{
+    display: flex;
+    align-items: center;
+}
+.login-links img{
+    width: 16px;
+    /* text에 맞춰주기위해 */
+    /* vertical-align: middle; */
+    margin-right: 4px;
+}
+/* 인라인 요소의 좌우 margin은 적용 */
+.login-links span{
+    margin: 0 2px;
+}
+
+
+/* float */ 
+/* .login-link a:last-child {
+    float: right;
+} */
