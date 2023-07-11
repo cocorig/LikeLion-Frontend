@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>float 실습</title>
+    <style>
+        img{
+            float: left;
+        }
+        span{
+            /* float를 사용하면 인라인요소가 블록요소로 변해 margin값이 들어간다. */
+            float: left;
+            background-color: aquamarine;
+            margin: 20px;
+        }
+        /* float 해제 */
+        p{
+            clear: both;
+        }
+    </style>
+
+</head>
+<body>
+
+
+        <span>안녕하세요</span>
+        <img src="http://placehold.it/200x150" alt="">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat tempore ratione vel reiciendis, doloremque recusandae, accusamus ab dolor quibusdam nihil, quis iste tenetur delectus enim molestias quae maxime accusantium sed?
+        </p>
+
+
+</body>
+</html>

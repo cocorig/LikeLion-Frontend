@@ -1,0 +1,62 @@
+
+<!DOCTYPE html>
+<html lang="ko-KR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flex-shrink</title>
+<style>
+    .container {
+        display: flex;
+        /* flex-direction: column; */
+        height: 200px;
+        background-color: #ddd;
+    }
+
+    .item {
+        background-color: skyblue;
+        border: 2px solid royalblue;
+        /* 1/5 씩 균등하게 가져감*/
+        /* flex-grow: 0; */
+    }
+    .item:nth-child(1){
+        flex-basis: 300px;
+        /* 나는 안 줄어들 거야! */
+        /* 2/3만큼  줄어들게*/
+        flex-shrink: 2;
+    }
+    .item:nth-child(2){
+        /* 2/6크기를 가져감 */
+        /* flex-grow: 2; */
+        /* 기본크기, flex의 방향에 해당하는 앨리먼트의 크기를 정함*/
+
+        flex-basis: 300px;
+        /* grow와 반대개념, 줄어들다는 뜻 */
+        /* 1/3 만큼 */
+        flex-shrink: 1;
+    }
+
+    /* .item1 {
+        /* 0으로 줄 경우 줄어들지 않는다. 크기를 고정하거나 축소할 때 사용, 얼마나 쪼그라질 건지,
+        어떨 때 주로 사용하는지? 반응형 처리할 때 고정돼야 할때 */
+        /* flex-basis: 200px;
+        flex-shrink: 0;
+    } */ 
+</style>
+</head>
+<!--shrink가 사용되기 위해서는 item이 flex-basis 가지고 있을 때 그 값보다 줄이는 것을 통해 일어난다.-->
+<body>
+    <div class="container">
+        <div class="item">item A </div>
+        <div class="item">item B </div>
+        <div class="item">item C </div>
+        <div class="item">item D </div>
+        <div class="item">item E </div>
+    </div>
+
+
+</body>
+
+</html>

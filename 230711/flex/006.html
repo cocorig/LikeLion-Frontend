@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flex-grow</title>
+    <style>
+        .container {
+            height: 300px;
+            display: flex;
+            background-color: #ddd;
+    
+        }
+
+        .item {
+            background-color: skyblue;
+            border: 2px solid royalblue;
+            /* 모두 동일한 값을 준다면 같은 비율로 나타낸다 */
+            /* text크기에 따라 달라질순 있다 */
+            flex-grow: 1;
+            /* 가지고 있는 영역을 초기화해버리면 다시 균등하게 분할하게 나옴 */
+            flex-basis: 0;
+            flex-shrink: 0;
+            
+        }
+        .item1 {
+            /* 늘어날 수 있는대로 늘어난다 */
+            flex-grow: 2;
+        }
+        .item2{
+            
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="item item1">item 1</div>
+        <div class="item item2">item 2</div>
+        <div class="item item3">item 3</div>
+        <div class="item item4">item 4</div>
+    </div>
+
+
+</body>
+
+</html>
