@@ -6,3 +6,7 @@
 
 [📦   07.07 
 Box 꾸미기 과제](https://cocorig.github.io/LikeLion-Frontend/230707/box/)
+
+[🎫  로그인 UI 실습](https://cocorig.github.io/LikeLion-Frontend/230711/login/)
+
+[🌇  카드 UI 실습](https://cocorig.github.io/LikeLion-Frontend/230712/figma/card-ui/)
