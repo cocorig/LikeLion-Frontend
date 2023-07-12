@@ -39,6 +39,7 @@ p {
     font-style: normal;
 }
 .box{
+
     padding: 30px 25px;
 }
 .login-container{
@@ -54,6 +55,8 @@ p {
     padding: 18px 15px;
     box-sizing: border-box;
     font-size: 12px;
+    margin:  0 auto;
+
 }
 
 .btn-login{
