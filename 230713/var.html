@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css 전역변수</title>
+</head>
+<style>
+    /* 유지보수하기 쉽다 */
+    :root{
+        --main-color : pink;
+        --border-radius: 0.4em;
+        --pene-padding : 0.5em 2em;
+
+    }
+    button{
+                             /* 대체 값도 줘야함 */
+        color: var(--main-color , white);
+        border-radius:  var(--border-radius);
+        padding: var(--pene-padding);
+    }
+
+</style>
+<body>
+    <!-- 버튼은 type을 적어야한다. -->
+    <button type="button">버튼</button>
+
+
+
+</body>
+</html>

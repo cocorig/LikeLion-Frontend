@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>min,max 함수</title>
+</head>
+<style>
+    body{
+        margin: 0;
+    }
+    .wrap{
+        background-color: pink;
+        margin: auto;
+        /* width: 1000px;
+        max-width: calc(100% - 60px); */
+        /* 둘 중의 작은 값을 선택해라 ,두 개의 값을 사용하고 둘 중 더 작은 값을 반환함*/
+        width: min(500px, calc(100% - 60px));
+    }
+</style>
+<body>
+    <div class="wrap">
+        hello
+    </div>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>속성선택자</title>
+</head>
+    <style>
+        [title]{
+            background-color: pink;;
+        }
+        [title ='hello1']{
+            border: 1px solid blue;
+        }
+        /* 속성이름 '속성값'  class에 reset이 포함된것만 선탁*/
+        [class ~= reset]{
+            box-shadow: inset 3px 3px  0 0 tomato;
+        }
+        [class ^=btn]{
+            color: red;
+        }
+        [href ^= 'https']{
+            border: 2px solid blue;
+        }
+    </style>
+<body>
+    <p  class="btn" title="hello1">안녕하세요</p>
+    <p class=" reset btn">안녕하세요</p>
+    <p class="btn reset" title="title">안녕하세요</p>
+    <p class="btn">안녕하세요</p>
+    <p class="btn">안녕하세요</p>
+    <a href="https" target="_blank"> 링크</a>
+    <a href="http:xxxxxx" target="_blank"> 링크</a>
+    <a href="http:xxxxxx" target="_blank"> 링크</a>
+    <a href="https" target="_blank"> 링크</a>
+</body>
+</html>

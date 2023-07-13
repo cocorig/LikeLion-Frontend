@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>가상 선택자</title>
+</head>
+<style>
+    /*  누르고있는 상태 */
+    input:active{
+        background-color: palegreen;
+    }
+
+    ::placeholder{
+        opacity: 0.5;
+        text-align: center;
+    }
+    /* 버튼이 활성화일때 hover */
+    button:enabled:hover{
+        background-color: aquamarine;
+    }
+    /* 누르고 있을때 ,active 싱태는 hover보다 뒤에 적어줘야함*/
+    button:enabled:active{
+        background-color: red;
+    }
+
+    /*마우스 클릭시에도 보임  */
+    /* 마우스 클릭했을때는 안나타나고, 키보드로 (tab)포커스했을때만 나타남 */
+
+    /* 내 자식요소중에 focus가 된다면 적용된다.부모에서 해당 선택자를 사용 */
+    div:focus-within{
+        background-color: pink;
+    }
+    /* 키보드로 버튼에 포커스 시 */
+    button:focus-visible {
+    outline: 3px solid #000;
+    }
+
+    /* 마우스, 터치로 버튼에 포커스 시 */
+    button:focus:not(:focus-visible) {
+    outline: none;
+    box-shadow: 1px 1px 5px rgba(1, 1, 0, .7);
+    }
+</style>
+<body>
+    <div>
+    <!-- <input type="text" placeholder="입력해주세요">
+    <input class="radio" type="radio"> -->
+    <button class="btn1" type="button">버튼</button>
+    <button class="btn2"type="button" >버튼</button>
+    <button class="btn"type="button" disabled>버튼</button>
+    </div>
+</body>
+</html>

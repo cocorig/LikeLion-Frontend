@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calc 함수이용 예시</title>
+    <style>
+        div{
+            background-color: pink;
+            /* 사칙연산 순서 주의 */
+            width: calc(100% - 10em);
+            
+            margin: auto;
+        }
+        body{
+            padding: 0;
+            margin: 0;
+        }
+        ul,
+        li {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        }
+
+        li {
+        float: left;
+        background-color: gold;
+        
+        /*  전체너비에서 (li의 여백이 세번 나타나니까  * 3) / li 4개  => 컨테이너 내에서 사용 가능한 공간의 동일한 부분을 차지하도록 한다. */
+        width: calc((100% - (20px * 3))/4);
+        }
+
+        li:not(:first-child) {
+        margin-left: 20px;
+        }
+
+        li:nth-child(even) {
+        background-color: seagreen;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+    </ul>
+    <!-- <div>
+        hello
+    </div> -->
+</body>
+</html>
