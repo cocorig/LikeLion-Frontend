@@ -1,0 +1,117 @@
+body,
+p,h1,h2,ul{
+    /* 컴퓨터에게 맠기는것 -> 의도가 명확함 */
+    margin: unset;
+    padding: unset;
+
+}
+li {
+    list-style-type: none;
+   
+}
+
+/* 부모로부터 상속받겠다. 상속받은게 없으니까 초기화한다는 뜻과 같다. 정해진 폰트사이즈를 취소해버리겠다. */
+h1, h2{
+    /* 최초의 상속으로 돌리겠다.  */
+    font-size: unset;
+    font-weight: unset;
+}
+body{
+    background-image: url(./images/background.png);
+    box-sizing: border-box;
+}
+
+
+/* type selector,*/
+.warpper{
+    background-color: #ddd;
+    width: 800px;
+    height: auto;
+    margin: 100px auto;
+}
+
+.header{
+
+    background-image: url(./images/cover02.png);
+    /* 높이가 생김 */
+    padding : 100px 0;
+    /* 정확하게 이미지를 맞출려면 */
+    background-size: cover;
+    background-position: center;
+    color: white;
+}
+/* desendent combinator */
+.header img{
+    /* 여백을 좌우로 나눠먹게 , 하지만 여기는 블록이 아니라 적용이 되지않는다.그래서 블록요소로해주면*/
+    margin: 0 auto;
+    display: block;
+    border: 5px solid white;
+    border-radius: 30px 50px 30px 50px;
+}
+
+.header h1{
+
+    text-align: center;
+    font-size: 5rem;
+    font-weight: 800;
+    margin-top:20px;    /* h1이 가운데로 정렬된게 아니다?? -> h1은 브라우저에의해 블록요소인데 , 800너비만큼 width: suto가 되있기때문에 가득 차있는것, 그래서 text-alicn하면 text(인라인)이기때문에 text만 가운데로가고 h1이 가운데로 온게 아니다 , h1이 정렬된게아나리 그 안에 text가 정렬된것*/
+    /* text-align: center; */
+
+    /* h1자체를 옮기고싶으면 너비를 정하고 , 그럼 마당이 생김 그래서   margin: 0 auto; 하면 가운데 정렬인것이다.*/
+}
+
+.header p{ 
+    margin: 0 auto;
+    border-top: 4px solid white;
+    width: fit-content;
+    padding: 10px 20px;
+}
+
+.section{
+    background-color: white;
+    padding: 20px;
+    margin: 20px;
+    background-image: url(./images/icon-information.png);
+    background-repeat: no-repeat;
+    background-position: right 30px center;
+}
+.skills{
+    background-image: url(./images/icon-skills.png);
+}
+
+.section h2{
+    font-size: 1.5rem;
+    font-weight:  bold;
+    margin-bottom: 20px;
+    color: rgb(209, 115, 131);
+}
+
+.section li{
+  
+    border-left: 4px solid #ddd;
+    padding-left: 10px;
+  
+}
+li:hover{
+    cursor: pointer;
+    color: rgb(209, 115, 131);
+}
+.footer{
+    text-align: center;
+    background-color: white;
+    padding: 50px;
+}
+.footer a{
+
+    background-color: rgb(209, 115, 131);
+    color:white; 
+    padding: 5px 20px;
+    border-radius: 15px;
+    text-decoration: none;  
+   
+}
+.footer a:hover{
+    color: #4f4c4c;
+    transition: 0.5s ease;
+   
+}
