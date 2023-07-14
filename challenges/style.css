@@ -1,0 +1,52 @@
+body,h1,h2,p{
+    margin: unset;
+    padding: unset;
+   
+}
+
+
+body{
+    background-image: url(./images/bg.png);
+    
+
+}
+.warpper{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+  transform: translate(-50%, -50%);
+  
+}
+.img{
+
+    width: 300px;
+    height: 300px;
+    background-image: url(./images/animal07.png)
+}
+.box{
+    width: 300px;
+    height: 300px;
+    background-color: #9C6035;;
+    border-radius: 0px 0px 30px 30px;
+    border-bottom: 10px solid #46260E;
+    background-image: url(./images/green.png);
+    background-repeat: no-repeat;
+    box-sizing: border-box;
+}
+
+
+.box h2{
+    font-size: 36px;
+    color: #FFF;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+.box p{
+    color: #E8BC9C;
+    font-size: 16px;
+    font-weight: 400;
+    width: fit-content;
+}
+.desc{
+    padding: 60px 20px;
+}
