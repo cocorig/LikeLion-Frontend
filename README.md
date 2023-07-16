@@ -4,9 +4,15 @@
 
 <br/>
 
-[📦   07.07 
-Box 꾸미기 과제](https://cocorig.github.io/LikeLion-Frontend/230707/box/)
+[📦 
+Box 꾸미기 과제](https://cocorig.github.io/likelion-Frontend/230707/box/)
 
-[🎫  로그인 UI 실습](https://cocorig.github.io/LikeLion-Frontend/230711/login/)
+[🎫  로그인 UI 실습](https://cocorig.github.io/likelion-Frontend/230711/login/)
 
-[🌇  카드 UI 실습](https://cocorig.github.io/LikeLion-Frontend/230712/figma/card-ui/)
+[🌇  카드 UI 실습](https://cocorig.github.io/likelion-Frontend/230712/figma/card-ui/)
+
+[🪪 프로필 만들기 실습](https://cocorig.github.io/likelion-Frontend/230714/profile/)
+
+[ 🔖 표 만들기 과제](https://cocorig.github.io/likelion-Frontend/230713/table.html)
+
+[🚩 CSS Challenges_fox](https://cocorig.github.io/likelion-Frontend/challenges/)
