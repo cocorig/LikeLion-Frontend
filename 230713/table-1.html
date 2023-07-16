@@ -1,103 +1,107 @@
 <!DOCTYPE html>
-<html lang="ko-KR">
-
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>table</title>
+    <title>표 만들기</title>
     <style>
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            /* 균등하게 나눠가진다. */
-            table-layout: fixed;
-        }
-
-        th,
-        td {
-            border: 1px solid #ddd;
-        }
-        caption{
-
-            caption-side: bottom;
-            margin-top: 30px;
-        }
+      body{
+        padding: 4em;
+      }
+      table{
+        border-collapse: collapse;
+        width: 100%;
+        table-layout: fixed;
+        border: 2px solid black;
+      }
+      table caption{
+        caption-side: bottom;
+        margin-top: 20px;
+      
+      }
+      thead tr:first-child th{
+        padding: 16px 0;
+      }
+      table th,
+      table td {
+        border: 1px solid black;
+        padding: 4px;
+      }
+    
+      thead, th{
+        background-color: #e8e8e8;
+      }
+      th {
+        font-weight: bold;
+        font-size: 15px;
+      }
+      td{
+        text-align: center;
+        font-size: 13px;
+      }
+      tfoot td{
+        font-weight: bold;
+    
+      }
     </style>
 </head>
-
 <body>
-    <!-- <h2>테이블의 제목</h2> -->
-    <table>
-        <caption>20203 학년도 대학수능능력시험 성적통지표</caption>
-        <colgroup>
-            <col class="col1">
-            <col style="width:20%;" span="2" class="col2">
-            <col class="col3">
-        </colgroup>
-<!-- 열 그룹 -->
-        <thead>
-            <tr>
-                <th scope="col">구분</th>
-                <th scope="col" rowspan="2">한국사 영역</th>
-                <th scope="col">국어 영역</th>
-                <th scope="col">수학 영역</th>
-                <th scope="col" rowspan="2">영어 영역</th>
-                <th scope="col" colspan="2">탐구 영역</th> 
-                <th scope="col">제 2 외국어 영역</th>
-                
-    
-            </tr>
-        </thead>
-<!-- 행 블록내에 데이터 -->
-        <tbody>
-            <tr>
-                <th>선택과목</th>
-                <td>&nbsp;</td>
-                <th>회법과 작문</th>
-                <th>확률과 통계</th>
-                <td>&nbsp;</td>
-                <th>생활과 윤리</th>
-                <th>지구과학1</th>
-                <th>독일어</th>
-                
-            </tr>
-            <tr>
-                <th>표준점수</th>
-                <td rowspan="2">&nbsp;</td>
-                <td >131</td>
-                <td>137</td>
-                <td rowspan="2">&nbsp;</td>
-                <td>53</td>
-                <td>64</td>
-                <td rowspan="2">&nbsp;</td>
-            </tr>
-            <tr>
-                <th>백분위</th>
-
-                <td>93</td>
-                <td>95</td>
-                <td>75</td>
-                <td>95</td>
-              
-        </tbody>
-        <!--  열 요약 -->
-        <tfoot>
-            <tr>
-                <th>등급</th>
-                <td>2</td>
-                <td>2</td>
-                <td>2</td>
-                <td>1</td>
-                <td>1</td>
-                <td>2</td>
-                <td>2</td>
-            </tr>
-        </tfoot>
-
-    </table>
-
-
+  <table>
+    <caption>2023 학년도 대학수능능력시험 성적통지표</caption>
+    <thead>
+      <tr>
+        <th scope="col">구분</th>
+        <th scope="col" rowspan="2">한국사 영역</th>
+        <th scope="col">국어 영억</th>
+        <th scope="col">수학 영역</th>
+        <th scope="col" rowspan="2">영어 영역</th>
+        <th scope="col" colspan="2">탐구 영역</th>
+        <th scope="col">제 2 외국어/한문 영역</th>
+      </tr>
+      <tr>
+        <th scope="row">선택 과목</th> 
+        <th scope="col"  >화법과 작문</th>
+        <th scope="col" >확률과 통계</th>
+        <th scope="col" >생활과 윤리</th>
+        <th scope="col" >지구과학1</th>
+        <th scope="col">독일어</th>
+      </tr>
+    </thead>
+  
+    <tbody>
+  
+      <tr>  
+        <th scope="row">표준점수</th>
+        <td rowspan="2"></td>
+        <td>131</td>
+        <td>137</td>
+        <td rowspan="2"></td>
+        <td>53</td>
+        <td>64</td>
+        <td rowspan="2"></td>
+      </tr>
+      <tr>
+        <th scope="row">백분위</th>
+        <td>93</td>
+        <td>95</td>
+        <td>75</td>
+        <td>93</td>
+      </tr>
+    </tbody>
+  
+    <tfoot>
+        <tr>
+          <th scope="row">등급</th>
+          <td>2</td>
+          <td>2</td>
+          <td>2</td>
+          <td>1</td>
+          <td>1</td>
+          <td>2</td>
+          <td>2</td>
+        </tr>
+    </tfoot>
+  </table>
 </body>
-
 </html>
