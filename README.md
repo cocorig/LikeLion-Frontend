@@ -13,6 +13,6 @@ Box 꾸미기 과제](https://cocorig.github.io/likelion-Frontend/230707/box/)
 
 [🪪 프로필 만들기 실습](https://cocorig.github.io/likelion-Frontend/230714/profile/)
 
-[ 🔖 표 만들기 과제](https://cocorig.github.io/likelion-Frontend/230713/table.html)
+[ 🔖 표 만들기 과제](https://cocorig.github.io/likelion-Frontend/230713/table-1.html)
 
 [🚩 CSS Challenges_fox](https://cocorig.github.io/likelion-Frontend/challenges/)
