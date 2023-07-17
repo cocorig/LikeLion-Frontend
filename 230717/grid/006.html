@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>grid demo</title>
+    <style>
+      .container{
+        display: grid;
+        width: 600px;
+        height: 600px;
+        margin: 0;
+        color: white;
+        /* 행 항상 2 : 1이 되게 */
+        grid-template-columns: 2fr 1fr;
+        /* 전체가 정해져있을때 비율로 나타낼수도 있다. */
+        grid-template-rows:  1fr 3fr 1fr;
+        gap: 10px;
+        padding: 10px;
+      
+        
+      }
+      header{
+        background-color: rgb(237, 136, 136);
+        grid-column: 1 / -1;
+
+      }
+      section{
+        background-color: rgb(215, 173, 254);
+        
+      }
+      aside{
+        background-color: rgb(189, 250, 222);
+    
+      }
+      footer{
+        background-color: rgb(236, 140, 201);
+        grid-column: -3 / -1;
+      }
+         /* font 가운데 정렬 */
+    header , section ,aside , footer {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 30px;
+        color: aliceblue;
+        font-weight: 900;
+        border: 1px solid black;
+        box-sizing: border-box;
+    }
+    </style>
+</head>
+<body>
+ <div class="container">
+   <header> header</header>
+   <section> section</section>
+   <aside>aside</aside>
+   <footer>footer</footer>
+ </div>
+</body>
+</html>

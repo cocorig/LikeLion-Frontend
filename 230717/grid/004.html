@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>grid 실습</title>
+    <style>
+        .container{
+            display: grid;
+            grid-template-areas:
+            'a a b'
+            'c d b'
+            'e f f'
+            ;
+            width: 500px;
+            height: 500px;
+            grid-template-columns: 2fr 1fr 2fr;
+            grid-template-rows: 2fr 1fr 2fr;
+            gap: 10px;
+        }
+        .item1{
+
+            background-color: rgb(106, 210, 210);
+            grid-area: a;
+        }
+        .item2{
+            background-color: rgb(153, 153, 255);
+            grid-area: b;
+        }
+        .item3{
+            background-color: rgb(249, 191, 255);
+            grid-area: c;
+        }
+        .item4{
+            background-color: rgb(225, 170, 170);
+            grid-area: d;
+        }
+        .item5{
+            background-color: rgb(255, 233, 153);
+            grid-area: e;
+        }
+        .item6{
+            background-color: rgb(227, 93, 93);
+            grid-area: f;
+        }
+    </style>
+</head>
+<body>
+<!-- z-index 속성을 grid 안에서도 사용할 수 있습니다.
+grid 안에서는 굳이 position 속성을 사용하지 않더라도 화면에 보여지는 우선순위를 설정할 수 있습니다. -->
+
+<div class="container">
+    <div class="item1"></div>
+    <div class="item2"></div>
+    <div class="item3"></div>
+    <div class="item4"></div>
+    <div class="item5"></div>
+    <div class="item6"></div>
+</div>
+</body>
+</html>
+
+

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>grid  | auto-fill ,auto-fit</title>
+    <style>
+      .container{
+        display:grid;
+        gap:10px;
+        background:#ddd;
+        margin-bottom:10px;
+        border:10px solid #aaa;
+        
+    }
+
+    .container div{
+      background:skyblue;
+      border:10px solid royalblue;
+      box-sizing: border-box;
+      height: 200px;
+    }
+
+/* 여백처리, 카드   */
+   .autofill{       /*min 보다 크거나 같고, max 보다 작거나 같은 크기 범위를 정의*/
+      grid-template-columns: repeat(auto-fill, minmax(200px, auto));
+    }
+/* 반응형 작업 , 문단 */
+    .autofit{
+      grid-template-columns: repeat(auto-fit, minmax(200px, auto));
+    }
+    </style>
+</head>
+<body>
+
+
+  <!-- auto-fill: 컴테이너 요소에 자동으로 채워줘. 가능한 많은 셀들을 만들어 낼려고 합니다. 빈공간이 생겨요 최소사이즈에 대해 적용되서 빈공간이 생김 , 사이즈가 넘어가도 최솟값 지킴-->
+  <div class="container autofill">
+    <div>
+      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequatur itaque neque aperiam a harum eum tenetur ipsa obcaecati blanditiis! Voluptas veritatis deserunt repellat eius id architecto, recusandae voluptate reiciendis aliquid.
+      
+    </div>
+    <div>
+      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequatur itaque neque aperiam a harum eum tenetur ipsa obcaecati blanditiis! Voluptas veritatis deserunt repellat eius id architecto, recusandae voluptate reiciendis aliquid.
+    </div>
+    <div>
+      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequatur itaque neque aperiam a harum eum tenetur ipsa obcaecati blanditiis! Voluptas veritatis deserunt repellat eius id architecto, recusandae voluptate reiciendis aliquid.
+    </div>
+      <div>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequatur itaque neque aperiam a harum eum tenetur ipsa obcaecati blanditiis! Voluptas veritatis deserunt repellat eius id architecto, recusandae voluptate reiciendis aliquid.
+    </div>
+    <div>
+      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequatur itaque neque aperiam a harum eum tenetur ipsa obcaecati blanditiis! Voluptas veritatis deserunt repellat eius id architecto, recusandae voluptate reiciendis aliquid.
+  </div>
+  </div>
+  <!-- auto-fit: 그리드 컨테이너 내부에 공간이 남을 경우, 그 공간을 각 셀들이 나눠 갖습니다.   사이즈가 넘어갔을때 자동으로 넓어짐-->
+  <div class="container autofit">
+    <div>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates ab, fugit voluptas architecto rem, necessitatibus qui amet, praesentium quos iusto eius? Iure, eum non cupiditate maxime dolore dolorum dolorem eveniet.
+    </div>
+    <div>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates ab, fugit voluptas architecto rem, necessitatibus qui amet, praesentium quos iusto eius? Iure, eum non cupiditate maxime dolore dolorum dolorem eveniet.
+    </div>
+    <div>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates ab, fugit voluptas architecto rem, necessitatibus qui amet, praesentium quos iusto eius? Iure, eum non cupiditate maxime dolore dolorum dolorem eveniet.
+    </div>
+      <div>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates ab, fugit voluptas architecto rem, necessitatibus qui amet, praesentium quos iusto eius? Iure, eum non cupiditate maxime dolore dolorum dolorem eveniet.
+    </div>
+    <div>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates ab, fugit voluptas architecto rem, necessitatibus qui amet, praesentium quos iusto eius? Iure, eum non cupiditate maxime dolore dolorum dolorem eveniet.
+    </div>
+
+  </div>
+</body>
+</html>
+
+<!-- 비워둘거면 fill을 쓰고 꽉 차게 하려면 fit -->

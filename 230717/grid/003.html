@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>grid 속성</title>
+  <style>
+    .container {
+      /* 높이가 350px, 컨테이너가 더 커야지 공간이 생기니가 정렬가능 */
+      height: 500px;
+      width: 500px;
+      display: grid;
+      grid-template-columns: 100px 100px 100px; 
+      grid-template-rows: 100px 100px;
+      background-color: #ddd;
+      /*그리드 콘텐츠 자체 정렬, 컨테이너 안에서 정렬 */
+      justify-content: space-between;
+      align-content: space-between;
+      /* 셀에 대해 어떻게 정렬할껀지 셀 안에서 , 셀의 크기를 결정할 수 있다.*/
+      align-items: center;
+    }
+
+    .item {
+      background-color: skyblue;
+      text-align: center;
+    }
+
+    .item:nth-child(odd) {
+      background-color: seagreen;
+    }
+
+     /* 개별적으로 정렬할꺼면 -self */
+    .self{
+      align-self: start;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="item self">A</div>
+    <div class="item">B</div>
+    <div class="item self">C</div>
+    <div class="item">D</div>
+    <div class="item">E</div>
+    <div class="item">F</div>
+    <div class="item">G</div>
+    <div class="item">H</div>
+    <div class="item">I</div>
+  </div>
+
+
+</body>
+
+</html>

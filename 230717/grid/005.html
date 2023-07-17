@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>grid demo</title>
+    <style>
+      body{
+        display: grid;
+        width: 100vw;
+        height: 100vw;
+        margin: 0;
+        color: white;
+        /* 행 항상 3 : 1이 되게 */
+        grid-template-columns: 3fr 1fr;
+        /* 맨위는 100px 고정 , 가운데는 auto , 마지막은 50px */
+        grid-template-rows: 100px auto 50px;
+        grid-template-areas: 
+        'header header'
+        'main side'
+        'footer footer';
+      }
+      header{
+        background-color: black;
+        grid-area: header;
+
+      }
+      section{
+        background-color: blueviolet;
+        grid-area: main;
+      }
+      aside{
+        background-color: tomato;
+        grid-area: side;
+      }
+      footer{
+        background-color: coral;
+        grid-area: footer;
+      }
+    </style>
+</head>
+<body>
+  <header> header</header>
+  <section> section</section>
+  <aside>aside</aside>
+  <footer>footer</footer>
+</body>
+</html>
