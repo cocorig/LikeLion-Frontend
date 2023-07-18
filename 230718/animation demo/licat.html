@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>animation licat</title>
+</head>
+<style>
+  /* .box{
+    width: 100px;
+    height: 100px;
+    background-color: rgb(178, 255, 255);
+    animation: changeBox 2s 1s 2;
+  }
+  @keyframes changeBox {
+    0% {
+      scale: 0;
+      background-color: rgb(126, 216, 216);
+    }
+    50%{
+      scale: 0.2;
+      background-color: rgb(30, 131, 131);
+    }
+    100%{
+      scale: 1;
+      background-color: rgb(30, 131, 131);
+    }
+  } */
+  
+  /*라이캣 */
+  .licat{
+    width: 168px;
+    height: 200px;
+    /* background: url(./img/image.png) no-repeat 0 0 / auto 100%; */
+    background-image: url(./img/image.png);
+    background-repeat: no-repeat;
+                    /* left top */
+    background-position: 0 0;
+    background-size:  auto 100%;        /*steps(n) : n개의 단계*/  
+    animation: move-licat 1s  infinite steps(6);
+/* 몇초 뒤에 시작할껀지 */
+    /* animation-delay: 3s; */
+
+  }
+  @keyframes move-licat {
+   to{                    /* 100% 0  */
+      background-position: right 0;
+    }
+  }
+/* 마우스 올리면 애니 정지  */
+  .licat:hover{
+    animation-play-state: paused;
+  }
+</style>
+<body>
+  <div class="licat"></div>
+  <!-- <div class="box"> box</div> -->
+</body>
+</html>

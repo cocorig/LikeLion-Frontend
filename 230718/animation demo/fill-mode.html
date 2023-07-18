@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>fill-mode demo</title>
+  <style>
+    @keyframes slide {
+
+      0% {
+        margin-left: 40%;
+        background-color: rgb(35, 94, 255);
+      }
+
+      50% {
+        margin-left: 0%;
+        background-color: rgb(152, 229, 188);
+      }
+
+      100% {
+        margin-left: 80%;
+        background-color: rgb(170, 30, 198);
+      }
+    }
+
+    .wrap {
+      width: 500px;
+    
+    }
+
+    .wrap div {
+      width: 100px;
+      height: 100px;
+      background-color: rgb(101, 102, 103);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 2em;
+      color: aliceblue;
+      font-weight: bold;
+      font-size: 1.5rem;
+    }
+
+    .wrap div~div {
+      margin-top: 20px;
+    }
+
+    .animation {
+      animation: slide 4s   ;
+      /* animation-name: slide;
+      animation-duration: slide;
+      animation-delay: 2s; */
+    }
+
+    /*  요소의 기존 스타일로 시작. 애니메이션 마지막 속성값 유지. */
+    .forwards{
+      
+      animation-fill-mode: forwards;
+    }
+    .backwards{  
+      animation-fill-mode: backwards;
+    }
+    /*  첫번째 애니속성의 정의된 값으로 시작. 마지막 값 유지 */
+    .both{
+      animation-fill-mode: both;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <div class="animation"> normal</div>
+    <div class="animation both"> both</div> 
+      <div class="animation backwards">backward</div>
+    <div class="animation forwards"> forwards </div>
+
+  </div>
+</body>
+
+</html>

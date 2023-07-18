@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>햄버거 메뉴 버튼 만들기</title>
+    <link rel="stylesheet" href="./hamburger.css">
+</head>
+<body>
+  <button class="btn" type="button">
+    <!-- 접근성을 위해 써줌 -->
+    <span class="a11y-hidden">전체 메뉴 열기</span>
+    <!-- 한꺼번에 회전시키기위해 묶어줌 -->
+    <span class="line-wrap">
+      <span></span>
+      <span></span>
+      <span></span>
+    </span>
+  
+  </button>
+</body>
+</html>
+
+<!-- 인라인안엔 블록이 올 수 없다 버튼은 인라인-블록요소이기 때문에 span으로 묶어준다 -->

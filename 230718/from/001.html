@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form 태그</title>
+</head>
+<body>
+  <!--  양식 데이터를 요청 본문으로 전송-->
+  <!-- post:  받은 데이터를 숨겨서 전달함, 보안성이 get방식보다 높다.  중요한 데이터는 POST 방식을 사용하여 요청-->
+  <form 
+    action="받을주소" 
+    method="post" 
+    enctype="multipart/form-data"
+  >
+    <input type="text" name="myTextField">
+    <input type="checkbox" name="myCheckBox">Check</input>
+    <input type="file" name="myFile">
+    <button>Send the file</button>
+</form>
+
+<!-- Get 방식 : 양식 데이터를 action URL과 ? 구분자 뒤에 이어 붙여서 전송 , - `ttps://example.com**?name=홍길동&age=20**` 보안 취약
+-->
+ <form method="get" action="http://naver.com">
+  <div>
+    <label for="user-name">이름</label>
+    <input id="user-name" type="text" name="name">
+  </div>
+  <div>
+    <label for="user-age">나이</label>
+    <input id="user-age" type="number" name="age">
+  </div>
+  <button type="submit">버튼</button>
+</form>
+</body>
+</html>

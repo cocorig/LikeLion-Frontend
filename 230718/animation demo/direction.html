@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>animation-direction</title>
+  <style>
+  body{
+    margin: unset;
+    padding: unset;
+  }
+    @keyframes slide {
+      from {
+        margin-left: 0;
+        background-color: rgb(248, 232, 234);
+        
+      }
+
+      to {
+        margin-left: 75%;
+        background-color: rgb(255, 82, 111);
+      }
+    }
+
+    .wrap {
+      width: 800px;
+      background-color: #eee;
+    }
+
+    .wrap div{
+      width: 100px;
+      height: 100px;
+      box-sizing: border-box;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: rgb(24, 16, 1);
+      font-size: 1.5rem;
+      font-weight: bold;
+      padding: 5em;
+    }
+
+    .wrap div~div {
+      margin-top: 20px;
+    }
+/* slide를 3s동안  진행하고 무한반복으로 한다  */
+    .animation {
+      /* animation-name: slide;
+      animation-duration: 3s;
+      animation-iteration-count: infinite; */
+      animation: slide 3s linear  infinite ; 
+    }
+
+
+    .alternate {
+      animation-direction: alternate;
+    
+
+    }
+
+    .reverse {
+      animation-direction: reverse;
+    }
+
+    .alternate-reverse {
+      animation-direction: alternate-reverse;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    
+    <!-- <div class="animation">normal <br>(to -> from)</div>
+    <div class="animation reverse">reverse  <br>(from -> to)</div> -->
+    <div class="animation alternate">alternate <br>(from -> to 반복)</div>
+    <div class="animation alternate-reverse">alternate-reverse
+     (to ->  from <br>반복)
+    </div>
+  </div>
+
+</body>
+
+</html>
