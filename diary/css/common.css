@@ -1,0 +1,182 @@
+
+:root{
+  --text-1 :#29363D;
+  --text-2 : #5A6A72;
+  --text-3 :#677880;
+  --bg-dot : #FFFAF0;
+
+}
+
+/* font */
+@font-face {
+  font-family: 'Pretendard-Regular';
+  src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff')
+    format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Pretendard-Bold';
+  src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Bold.woff')
+    format('woff');
+  font-weight: 700;
+  font-style: normal;
+}
+/* reset */
+body,h1,h2,p{
+  margin: 0;
+  padding: 0;
+}
+/* 여백 없어지게 img 초기화 */
+img{
+  vertical-align: top;
+  background-color: #EEE;
+}
+
+/* body의 글꼴스타일을 상속받갰다 */
+button,input{
+  font : inherit
+}
+body{
+  box-sizing: border-box;
+  background-color: var(--bg-dot);
+  font-family: 'Pretendard-Regular', sans-serif;
+}
+a{
+  text-decoration: none;
+  outline: none;
+  color:inherit;
+}
+
+
+/* css 적용 */
+/* header  */
+/* 밤복될꺼라서 따로 씀 */
+.header{
+  background-color: #a47d7d;
+}
+.max-width {
+  width: 1284px;
+  /* 부모의 100% 100vw ,최대너비는 부모를 넘지않게끔 부모보다 크면 조절 */
+  /* 양 얖에 margin 30px씩 */
+  max-width:calc(100% - 60px);
+  margin: auto;
+}
+.header .max-width{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 120px;
+  border-bottom: 1px solid #EEE;
+
+}
+.header h1{
+  width: 156px;
+
+}
+/* button */
+.btn-join{
+  /* a태그이기때문에 재사용성  inline + flex , inline-block: 가로로 정렬가능*/
+  display: inline-flex;
+  align-items: center;
+  background-color: #FFF;
+  padding: 0 20px 0 52px;
+  height: 40px;
+  /* 데이터 처리를 안하는 경우 배경으로 적용한다. 레이아웃이 깨질 경우를 대비해서 배경이러던지 가상요소로 넣을 수 있다. */
+  background-image: url(../img/icon-join.svg);
+  background-repeat: no-repeat;
+  background-size: 32px;
+  background-position: 10px 50%;
+}
+
+
+/* main */
+
+
+.login{
+  margin-top: 70px;
+}
+.main-title{
+
+  width: 250px;
+  margin: auto;
+  color: var(--text-1);
+  text-align: center;
+  
+}
+.main-title svg{
+  display: block;
+  width: 100%;
+  margin-bottom: 30px;
+  position: relative;
+}
+.svg-heart{
+  stroke: #ffc7d1;
+  stroke-width: 1.5px;
+  scale: 1;
+  transform-origin: 50% 20px;
+  animation: heart 0.5s ease  infinite alternate;
+}
+
+@keyframes heart {
+
+  100%{
+    stroke: #ffc7d1;
+    stroke-width: 2px;
+    scale: 1.5;
+  }
+}
+.main-title strong{
+  color: #29363d;
+  font-size: 24px;
+  font-family: 'Pretendard-Bold';
+  box-shadow: inset 0 -0.5em 0 rgba(255, 79, 110, 0.2);
+  border-bottom: 2px solid #ff4f6e;
+}
+
+
+/* 로그인 form */
+form{
+  width: 392px;
+  margin: auto;
+  flex-direction: column;
+  /* margin: 40px auto 50px */
+  margin-top: 40px;
+  margin-bottom: 50px;
+}
+form label{
+  /* 한 줄 꽉 차게 */
+  display: block;
+  color: var(--text-1);
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+form input{
+  width: 100%;
+  height: 48px;
+  border: none;
+  border-bottom: 1px solid #677880;
+  padding: 0;
+  border-radius: 4px;
+  padding: 10px;
+  box-sizing: border-box;
+}
+.form > div{
+  margin-bottom: 24px;
+}
+
+.form button[type = 'submit']{
+  width: 100%;
+  height: 48px;
+  background:var(--text-1);
+  border-radius: 4px;
+  color: #F4F5F5;
+  font-size: 16px;
+  font-family: 'Pretendard-Bold';
+}
+.footer p{
+  text-align: center;
+  color: var(--text-3);
+  font-size: 12px;;
+  font-weight: 400
+}
