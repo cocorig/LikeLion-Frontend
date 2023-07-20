@@ -1,0 +1,68 @@
+body{
+  margin: 0;
+  min-height: 100vh;
+  background: linear-gradient(45deg, rgb(255, 252, 254) 0% , rgb(242, 255, 230) );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+}
+
+.wrap{
+  /* border: 2px solid  black; */
+}
+
+.card{
+  width: 200px;
+  height: 200px;
+  background-color: white;
+  position: relative;
+  transition: transform 1s;
+  /* tansfrom-style : 요소에 변형을 적용할때 그 변환이 자식요소에게도 적용될지 안될지를 설정. preserve-3d : 3D 공간에 배치*/
+  transform-style: preserve-3d;
+  /* 원근갑 */
+  /* perspective : 원근감을 주기 위해 z=0 평면과 사용자 사이의 거리를 결정,값이 작을 수 가까이 다가오게 */
+  transform: perspective(200px) scale(0.5);
+}
+
+.front,
+.back{
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  color: white;
+  font-weight: bold;
+  position: absolute;
+  /* top: 0;
+  left: 0; */
+
+  /* 뒷면이 안보이게 */
+  backface-visibility: hidden;
+}
+
+.front{
+  background-color: rgb(135, 135, 222);
+
+}
+.back{
+  background-color: rgb(217, 213, 255);
+  transform: rotateY(180deg);
+}
+
+/* hover */
+
+.wrap:hover .card{
+  cursor: pointer;
+  /* transform: rotateY(180deg); */
+  transform: perspective(200px) scale(1.2) rotateY(180deg) rotateX(360deg) ;
+}
+
+/* perspective-origin : 소실점 (x,y) ,기본값은 정 중앙 */
+/*perspective: 부모에게 사용  */
+/* transform: perspective(800px): 요소에 직접적으로 설정 */
+
+/* backface-visibility : 요소의 뒷면이 사용자를 향할 때 보이게 할지 설정  ,hidden: 뒷면 보이지 않음, 기본값: visible*/
