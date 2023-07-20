@@ -22,20 +22,45 @@
   font-weight: 700;
   font-style: normal;
 }
+
+
+.a11y-hidden {
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(50%);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+}
+
 /* reset */
 body,h1,h2,p{
   margin: 0;
   padding: 0;
+  font-size: inherit;
 }
 /* 여백 없어지게 img 초기화 */
 img{
   vertical-align: top;
-  background-color: #EEE;
+  
 }
-
+ol,li{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
 /* body의 글꼴스타일을 상속받갰다 */
 button,input{
   font : inherit
+}
+button{
+  border: 0;
+  background: none;
+}
+button:enabled{
+  cursor: pointer;
 }
 body{
   box-sizing: border-box;
@@ -51,10 +76,12 @@ a{
 
 /* css 적용 */
 /* header  */
-/* 밤복될꺼라서 따로 씀 */
+/* 반복될꺼라서 따로 씀 */
 .header{
-  background-color: #a47d7d;
+  border-bottom: 1px solid #EEE;
+  background: #FFF;
 }
+
 .max-width {
   width: 1284px;
   /* 부모의 100% 100vw ,최대너비는 부모를 넘지않게끔 부모보다 크면 조절 */
@@ -74,19 +101,65 @@ a{
   width: 156px;
 
 }
+/* main.html */
+header .login-text{
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+header .login-text p strong{
+
+  box-shadow: inset 0 -0.5em 0 rgba(255, 79, 110, 0.8);
+  font-family: 'Pretendard-Bold';
+}
+
+@media (min-width: 601px) {
+  header .login-text p::after{
+    content: '|';
+    color: #d8ddde;
+    margin-left: 24px;
+    background-color: pink;
+  }
+}
+@media (max-width : 600px) {
+  
+  header .login-text p{
+   
+    position: absolute;
+    top: 140px;
+    right: 30px;
+  }
+  header .login-text p::after{
+    display: none;
+  }
+}
+.logout{
+  background: url(../img/icon-logout.svg);
+}
+
+
 /* button */
-.btn-join{
+[class^='btn'] {
   /* a태그이기때문에 재사용성  inline + flex , inline-block: 가로로 정렬가능*/
   display: inline-flex;
   align-items: center;
   background-color: #FFF;
-  padding: 0 20px 0 52px;
+  padding: 0 20px 0 46px;
   height: 40px;
   /* 데이터 처리를 안하는 경우 배경으로 적용한다. 레이아웃이 깨질 경우를 대비해서 배경이러던지 가상요소로 넣을 수 있다. */
-  background-image: url(../img/icon-join.svg);
   background-repeat: no-repeat;
   background-size: 32px;
   background-position: 10px 50%;
+}
+.btn-login {
+  background-image: url(../img/icon-login.svg);
+}
+.btn-join {
+  background-image: url(../img/icon-join.svg);
+}
+.btn-logout {
+  background-image: url(../img/icon-logout.svg);
 }
 
 
@@ -134,9 +207,9 @@ a{
   border-bottom: 2px solid #ff4f6e;
 }
 
-
+/* 로그인 페이지에서만 적용하게 .login으로 적음 구체적으로 */
 /* 로그인 form */
-form{
+.login form{
   width: 392px;
   margin: auto;
   flex-direction: column;
@@ -151,6 +224,7 @@ form label{
   font-size: 14px;
   margin-bottom: 8px;
 }
+
 form input{
   width: 100%;
   height: 48px;
@@ -174,9 +248,27 @@ form input{
   font-size: 16px;
   font-family: 'Pretendard-Bold';
 }
+
+
+/* main페이지 textarea부분 */
+.form textarea{
+  /* inline-block 이기때문에 하단 여백 */
+  display: block;
+  border: 1px solid #677880;
+  border-radius: 4px;
+  width: 100%;
+  height: 360px;
+  resize: none;
+  box-sizing: border-box;
+  padding: 10px;
+  font: inherit;
+  /* aspect-ratio: 1/1; */
+}
 .footer p{
   text-align: center;
   color: var(--text-3);
   font-size: 12px;;
   font-weight: 400
 }
+
+

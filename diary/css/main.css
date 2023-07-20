@@ -1,0 +1,185 @@
+/* 전체 layout */
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+.main {
+  flex-grow: 1;
+}
+
+/* 일기부분 제목 */
+.heart-title{
+font-family: 'Pretendard-Bold';
+background-image: url(../img/heart.svg);
+background-repeat: no-repeat;
+line-height: 1;
+/* 폰트 사이즈를 기준으로 em */
+padding: 0.5em  0 0.5em 2em;
+background-position: 0 0%;
+background-size: 2em;
+margin-bottom: 16px;
+}
+
+
+/* main layout,section사이에 gap */
+.main{
+  display: flex;
+  gap: 40px;
+
+}
+.main > section{
+  flex-basis: 0;
+}
+
+/* 일기 부분 */
+/* 1:2비율로 설정  */
+.main .main-form{
+  padding: 56px 39px 56px 0;
+  /* 줄어들지 않겠다 */
+  flex-shrink: 0;
+  border-right: 1px solid #ff4f6e;
+  flex-grow:1;
+  min-width: 360px;
+}
+/* 일기와 다이어리 section이 1/2로 늘어나게 설정*/
+/* 다이어리 목록 */
+.main .main-diary{
+  flex-grow:2;
+}
+/* 1024px되면 적용 */
+@media (max-width: 1024px) {
+ 
+  .main {
+    flex-direction: column;
+    /* 위 ,양얖 auto로 가운데 정렬  , 아래 적용안함 */
+    margin: 40px auto 0;
+  }
+  /* 일기 부분 */
+  .main .main-form {
+    min-width: 100%;
+    border: 0;
+    padding: 0; 
+  }
+}
+
+
+
+/* article 묶음전체  위 아래 margin*/
+.list li{
+  margin: 70px 0;
+}
+
+/* article */
+.diary-article{
+
+  border-width: 4px 1px 1px 1px;
+  padding: 60px 48px;
+  border-color: #677880;
+  border-style: solid;
+  position: relative;
+}
+/* 쉼표 모양 */
+.diary-article::before,
+.diary-article::after
+{
+  content: '';
+  background-color:#fffaf0;
+  display: block;
+  width: 80px;
+  height: 40px;
+  position: absolute;
+  background-size: contain;
+}
+
+.diary-article::before{
+  top: -20px;
+  left: 30px;
+  background-image: url(../img/quote-start.svg);
+  z-index: 10;
+}
+.diary-article::after{
+  bottom: -20px;
+  right: 30px;
+  background-image: url(../img/quote-end.svg);
+}
+.diary-article header{
+  align-items: center;
+  justify-content: space-between;
+  display: flex;
+  /* 묶어서 자동 줄바꿈 처리 */
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+/* 얇은 선 추가 */
+.diary-article header::before{
+  content: '';
+  display: block;
+  width: 100%;
+  height: 1px;
+  background-color: #677880;
+  position: absolute;
+  top: 4px;
+  left: 0;
+}
+
+.article-title{
+  color: var(--text-1);
+  font-family: 'Pretendard-Bold';
+  /* overflow: hidden; 
+  white-space: nowrap;
+  text-overflow: ellipsis; */
+}
+
+.article-time{
+  font-size: 12px;
+  color: #677880;
+}
+.article-contents{
+  
+  font-size: 14px;
+  color: var(--text-2);
+  line-height: 1.4;
+}
+
+/* 버튼 */
+.button-group{
+  border: 1px solid #677880;
+  border-radius: 24px;  
+  background: #FFF;
+  width: 111px;
+  height: 40px;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.button-group span{
+  width: 1px;
+  height: 16px;
+  background-color: #d8ddd2;
+}
+.button-group button {
+  opacity: 0.5;
+  transition: all 0.3s;
+}
+.button-group button:hover {
+  opacity: 1;
+}
+/* media 적용 */
+@media (max-width : 768px) {
+  .main{
+    flex-direction: column;
+  }
+  .main .main-form{
+    min-width: 100%;
+    border: 0;
+    padding: 0;
+  }
+}
+
