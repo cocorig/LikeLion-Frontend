@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Flexing</title>
+        <style>
+            body {
+                background-color: brown;
+            }
+            .playground {
+                border: 10px solid maroon;
+                width: 980px;
+                margin: 0 auto;
+                border-radius: 20px;
+                background-color: skyblue;
+                display: flex;
+            }
+            .frog {
+                background-color: mediumseagreen;
+                color: lime;
+                font-size: 40px;
+                margin: 10px;
+                border: 6px solid green;
+                border-radius: 10px;
+                /* basis를 정해주면 안에 콘텐츠가 있든 없든 200px로 고정된다 */
+                /* basis가 auto면 grow는 basis값(content) + grow가 더해진것 */
+                flex-basis: 200px;
+                flex-shrink: 1;
+                /* flex-grow: 1; */
+                /* 자식요소의 크기로 결정됨 */
+                min-width: 0;
+            }
+            /* 난 줄어들지 않겠어! */
+            .flog.sun{
+                flex-shrink: 0;
+            }
+            /* 더 많은 비율로 줄어든다. */
+            .flog.cry{
+                flex-shrink: 200;
+            }
+            /* .frog:first-child{
+                margin-left: auto;
+            } */
+            /* .frog:last-child{
+                margin-right: auto;
+            } */
+        </style>
+    </head>
+    <body>
+
+        <div class="playground">
+            <div class="frog cry"><img src="./images/frog-cry.png" alt="">
+            </div>
+            <div class="frog sun"><img src="./images/frog-disco.png" alt="">
+            </div>
+            <div class="frog"><img src="./images/frog-eat.png" alt="">
+            </div>
+            <div class="frog"><img src="./images/frog-eat.png" alt="">
+            </div>
+            <div class="frog"><img src="./images/frog-eat.png" alt="">
+            </div>
+            <div class="frog">
+            <img src="./images/frog-eat.png" alt="">
+            </div>
+        </div>
+
+    </body>
+</html>
+
+
+<!-- flex를 부모에 주면 자식들은 블록요소가 된다. -->
+<!-- 자식들이 text크기만큼 차지하고 있는 이유는? flex-basis때문이다. -->
+<!--  flex-basis은 하위요소인 frog에 적용되는것,크기를 정하는 용도 -->
+<!--  flex-basis: auto (기본값) ->text크기만큼 차지하는게  flex-basis: auto가 하는 일-->
+
+<!--  flex-grow: 1; -> basis값이 더해진 것 , 사용가능한 공간을 flog의 공간으로 만들어주는 역할 -->
+
+<!--  flex-basis: 200px -> 사이즈 방을 만들어준다. -->
+<!--  flex-shrink: 1;(기본값) 만약에 줄어들어야 하는 상황이 있다면 다 같이 공통 분담하겠다. -->
