@@ -16,3 +16,6 @@ Box 꾸미기 과제](https://cocorig.github.io/likelion-Frontend/230707/box/)
 [ 🔖 표 만들기 과제](https://cocorig.github.io/likelion-Frontend/230713/table-1.html)
 
 [🚩 CSS Challenges_fox](https://cocorig.github.io/likelion-Frontend/challenges/)
+
+
+[🤹🏻‍♂️ CSS 캐릭터 만들기](https://cocorig.github.io/likelion-Frontend/CSS-Character/)
