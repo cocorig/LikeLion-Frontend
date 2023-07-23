@@ -1,0 +1,93 @@
+/* reset */
+body
+{
+  padding: 0;
+  margin: 0;
+
+}
+h2{
+  font: inherit;
+  padding: 0;
+  margin: 0;
+}
+ul{
+  margin: 0;
+  padding: 0;
+}
+li{
+  list-style: none;
+}
+:root{
+  --background-color : #D9D9D9;
+  --point-color :#FF007A;
+  --main-color: #EEE;
+  --seconed-color:#FFF;
+  --text-color:#888;
+}
+/* css */
+
+body{
+  background-color: var(--background-color);
+  font-family: Arial;
+  box-sizing: border-box;
+ 
+}
+
+.warpper{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+/*   이렇게 스타일하지 않으면 부모 엘리먼트의 높이가 컨텐츠 높이만큼 자치하기 때문에 수평으로 정렬되는 효과만 나타남 */
+  min-height: 100vh;
+}
+
+.article{
+  width: 448px;
+  border-radius: 20px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.10);
+
+}
+
+.header{
+  background-color: var(--seconed-color);
+  border-bottom: 4px solid #DDD;
+  border-radius: 20px 20px 0px 0px;
+}
+
+.header .title{
+  color:var(--point-color);
+  font-size: 1.5rem;
+  font-weight: 700;
+  padding: 46px 239px 46px 39px;
+  position: relative;
+}
+.header .title::before{
+  content: ' ';
+  display: inline-block;
+  width: 8px;
+  height: 32px;
+  background-color: var(--point-color);
+  border-radius: 0px 10px 10px 0px;
+  position: absolute;
+  left: 0;
+}
+
+.lists{
+  background-color: var(--main-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 38px;
+  gap: 14px;
+  box-sizing: border-box;
+  border-radius: 0px 0px 20px 20px;
+}
+.lists li{
+  background-color: var(--seconed-color);
+  color: var(--text-color);
+  font-weight: 400;
+  border: 4px solid var(--background-color);
+  border-radius: 10px;
+  font-size: 1rem;
+  padding: 1em;
+}
