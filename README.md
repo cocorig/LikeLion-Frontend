@@ -17,5 +17,13 @@ Box 꾸미기 과제](https://cocorig.github.io/likelion-Frontend/230707/box/)
 
 [🚩 CSS Challenges_fox](https://cocorig.github.io/likelion-Frontend/challenges/)
 
+### 🤹🏻‍♂️ HTML, CSS로 캐릭터 그리기 과제
 
-[🤹🏻‍♂️ CSS 캐릭터 만들기](https://cocorig.github.io/likelion-Frontend/CSS-Character/)
+[CSS-Character-tamama](https://cocorig.github.io/likelion-Frontend/CSS-Character/)
+
+▶️  결과물
+
+<img src="https://github.com/cocorig/likelion-Frontend/assets/95855640/af3f0797-697a-4aee-8a86-81efe8a64ea4" width="100%">
+
+[👀 👉 더 자세히 보러가기](https://github.com/cocorig/likelion-Frontend/tree/main/CSS-Character)
+
