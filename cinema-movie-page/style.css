@@ -1,0 +1,137 @@
+/* reset */
+body,
+ul,
+li,
+h1,
+h2,
+h3,
+p {
+  padding: 0;
+  margin: 0;
+}
+img {
+  vertical-align: top;
+}
+h1,
+h2,
+h3 {
+  font: inherit;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  font: inherit;
+  border: 0;
+  background: none;
+}
+button:enabled {
+  cursor: pointer;
+}
+ul,
+li {
+  list-style: none;
+}
+
+/* CSS 적용 */
+body{
+  font-family: 'Noto Sans KR', sans-serif;
+}
+/* article */
+.cinema-card {
+  width: 220px;
+  border-radius: 10px;
+  border: 1px solid #BDBDBD;
+  box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.25);
+}
+
+.cinema-inner{
+  padding: 19px 20px;
+}
+
+.cinema-card img{
+  /* 유지보수 이미지 크기조정 */
+  width: 100%;
+  aspect-ratio: 180/250;
+  object-fit: cover;
+  
+  border-radius: 10px;
+  border: 1px solid #BDBDBD;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.cinema-title{
+  font-weight: 900;
+  margin: 12px 0;
+
+  /* 말줄임 처리 */
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+/* ul태그 각 각 li의 gap으로 줌 */
+.cinema-info{
+  font-size: 13px;
+  display: flex;
+  /* 부모 넓이보다 요소들의 총 넓이가 크다면 나머지 요소들을 다음줄로 줄바꿈 */
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 5px;
+}
+.cinema-info .type{
+  color: #828282;
+  margin-right: 5px;
+}
+
+.cinema-info .star {
+  background-image: url(./img/icon-star.svg);
+  background-repeat: no-repeat;
+  background-position: 0 0.3em;
+  background-size: 1em;
+  /*  background-image가 들어갈 자리를 만듬 */
+  padding-left: 1.2em;
+}
+.btn-group{
+  display: flex;
+  border-top: 1px solid #bdbdbd;
+}
+.btn-go,
+.btn-view{
+  background-color: #f2f2f2;
+  width: 100%;
+  font-size: 14px;
+  height: 41px;
+  padding-bottom: 2px;
+  box-sizing: border-box;
+}
+/* 포커스될때만 앞으로,포커스가 잘리지않게 처리*/
+.btn-go{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0 0 0 10px;
+  border-right: 1px solid #bdbdbd;
+}
+.btn-go:focus-visible {
+  z-index: 1;
+}
+.btn-view {
+  border-radius: 0 0 10px 0;
+}
+.btn-view::before {
+  content: '';
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+
+  background-image: url(./img/icon-play.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+
+  vertical-align: middle;
+  margin: -2px 2px 0 -0.4em;
+}
+/* flex가 들어가면 position 속성 생락가능, */
