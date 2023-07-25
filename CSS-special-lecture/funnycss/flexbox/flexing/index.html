@@ -5,14 +5,20 @@
         <style>
             body {
                 background-color: brown;
+                height: 100vh;
+                display: flex;
             }
+        
             .playground {
                 border: 10px solid maroon;
                 width: 980px;
-                margin: 0 auto;
+                margin: auto auto;
                 border-radius: 20px;
                 background-color: skyblue;
                 display: flex;
+                flex-wrap: wrap;
+                align-items: center;
+                height: 500px;
             }
             .frog {
                 background-color: mediumseagreen;
@@ -24,14 +30,20 @@
                 /* basis를 정해주면 안에 콘텐츠가 있든 없든 200px로 고정된다 */
                 /* basis가 auto면 grow는 basis값(content) + grow가 더해진것 */
                 flex-basis: 200px;
+                /* 남는공간을 균등하게 나눠갖는다 */
+                /* flex-grow: 1 */
+                ;
                 flex-shrink: 1;
                 /* flex-grow: 1; */
                 /* 자식요소의 크기로 결정됨 */
                 min-width: 0;
+                height: 200px;
+
             }
             /* 난 줄어들지 않겠어! */
             .flog.sun{
                 flex-shrink: 0;
+
             }
             /* 더 많은 비율로 줄어든다. */
             .flog.cry{
@@ -43,6 +55,13 @@
             /* .frog:last-child{
                 margin-right: auto;
             } */
+            .frog.first{
+                background-color: red;
+                /* bottom으로 가게끔 */
+                /* 방법: 1 margin-top: auto; */
+                /* 방법 2 */
+                align-self:flex-end;
+            }
         </style>
     </head>
     <body>
@@ -52,14 +71,7 @@
             </div>
             <div class="frog sun"><img src="./images/frog-disco.png" alt="">
             </div>
-            <div class="frog"><img src="./images/frog-eat.png" alt="">
-            </div>
-            <div class="frog"><img src="./images/frog-eat.png" alt="">
-            </div>
-            <div class="frog"><img src="./images/frog-eat.png" alt="">
-            </div>
-            <div class="frog">
-            <img src="./images/frog-eat.png" alt="">
+            <div class="frog first"><img src="./images/frog-eat.png" alt="">
             </div>
         </div>
 
@@ -76,3 +88,4 @@
 
 <!--  flex-basis: 200px -> 사이즈 방을 만들어준다. -->
 <!--  flex-shrink: 1;(기본값) 만약에 줄어들어야 하는 상황이 있다면 다 같이 공통 분담하겠다. -->
+<!-- 부모의 높이가 커지면 나머지 하위 자식들 높이도 커진다. -->

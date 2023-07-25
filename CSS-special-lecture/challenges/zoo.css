@@ -1,0 +1,83 @@
+/* reset */
+body,h2,p{
+  margin: unset;
+}
+
+h1{
+  margin: unset;
+}
+/* component */
+body{
+  background-image: url(./images/bg.png);
+  background-attachment: fixed;
+  background-size: cover;
+  color: white;
+}
+
+.header{
+background-color:#0e0e0e;
+text-align: center;
+font-size: 100px;
+line-height: 1.5;
+height: 300px;
+word-spacing: 0;
+font-family: 'Lilita One', cursive;
+position: relative;
+overflow: hidden;
+transition:  word-spacing 0.3s , color 0.3s;
+color: #555;
+
+}
+.header-cover{
+  position: absolute;
+  /* 양 옆 다 차지 */
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: 0 auto;
+  transition:transform 0.5s ;
+  transform: translateY(70%);
+}
+.header:hover{
+  word-spacing: 300px;
+  color: #fff;
+}
+.header:hover .header-cover{
+  transform: translateY(35%);
+}
+.contents{
+  min-height: calc(100vh - 360px);
+}
+
+
+.contents .main{
+padding: 40px 0;
+
+}
+/* layout */
+/* 가로 가운데 정렬 담당 */
+.wrap{
+  width: 800px;
+  background-color: red;
+  margin: 0 auto;
+}
+.grid{
+  /* contents 크기만큼 줄어든다 */
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+.grid-item{
+  flex-basis: 200px;
+  flex-grow: 1;
+  min-height: 200px;
+  min-width: 0;
+}
+.footer{
+background-color: #444;
+/* 마지막 작성안하면 currentColor 상속해서 받아온 color적용 */
+border-top: 4px solid #999;
+height: 60px;
+line-height: 60px;
+text-align: center;
+}

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+        <title>06 Position</title>
+        <link rel="stylesheet" href="style.css">
+        <style>
+            body {
+                background-color: #ddd;
+            }
+            .grand-father {
+                background-color: #eee;
+                width: 800px;
+                margin: 0 auto;
+                padding: 1px;
+            }
+            .father {
+                background-color: white;
+                width: 300px;
+                height: 200px;
+                margin: 50px auto;
+            }
+            .children {
+                width: 100px;
+                height: 100px;
+                /* 다른 컨텐츠가 영향을 받지않음, 자기 자신만 움직임 */
+                /* transform: translateX(-50px); */
+                position: relative;
+                left: -50px;
+                /* margin-left: -20px; */
+                /*  */
+            }
+            .pos{
+                background-color: pink;
+                position: absolute;
+                /* 마치 flex-grow */
+                /* left: 0;
+                top: 0;
+                bottom: 0;
+                right: 0; */
+                /* 단축속성 */
+                inset: 0;
+                /* 사용가능한 공간이 생긴다 */
+                width: 300px;
+                height: 300px;
+                margin:  auto;
+                 /*  가운데 정렬 가능 */
+            }
+        </style>
+	</head>
+	<body>
+
+        <div class="grand-father">
+            <div class="father">
+                <!-- <img class="children" src="img.png">
+                    하하하 -->
+                <div class="pos">POS</div>
+            </div>
+        </div>
+       
+	</body>
+</html>
+<!-- 부모가 제공해준 컨텐츠 영역에 가득참 -> 컨테이닝 블록 -->
+<!-- position transform은 자체적으로 움직이는 거고 position inset margin은 마당을 활용 -->
