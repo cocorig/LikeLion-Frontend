@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>input custom</title>
+    <style>
+      /* input 기존 체크박스 숨김처리 */
+      .txt-hide{
+        overflow: hidden;
+        width: 1px;
+        height: 1px;
+        clip-path: inset(50%);
+      }
+      /* 라벨 앞에 체크박스 모양잡기 */
+      .labl-hold{
+        position: relative;
+      }
+      .labl-hold::before{
+        content: ' ';
+        display: inline-block;
+        background-image: url(./images/check-box-1.svg);
+        background-position: 10% 10%;
+        width: 22px;
+        height: 22px;
+        vertical-align: bottom;
+        margin-right: 12px;
+        
+      }
+      .labl-hold::after{
+          content: '';
+          position: absolute;
+          width: 22px;
+          height: 22px;
+          background-image: url(./images/check-box.svg);
+          top: -3px;
+          left: 30px;
+          opacity: 0;
+        
+        }
+        /* 인풋이 선택이되면  체크이미지를 left:0으로해서 체크가 이동하게*/
+        .inphold:checked + .labl-hold::after{
+          left: 0;
+          opacity: 1;
+        }
+    </style>
+</head>
+<body>
+  <input class="inphold txt-hide" type="checkbox" id="hold" >
+    <label for="hold" class="labl-hold"> 
+        로그인 상태 유지
+    </label>
+</body>
+</html>
+

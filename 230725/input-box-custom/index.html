@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>input 박스 커스텀하기</title>
+    <style>
+        /* input 요소 숨기기  */
+        .txt-hide{
+            /* 부모를 넘어가는 다른 콘텐츠를 화면에 보여주지 않기위해 숨긴다 ,안전을 위해 넣어줌*/
+            overflow: hidden;
+            width: 1px;
+            height: 1px;
+            /* 경로에 따라 html을 잘라낸다, inset();네모로 잘라줌 top,left,rigth,bottom*/ 
+            clip-path: inset(50%);
+            /* 50%하면 모든 부분이 잘라짐 ->  화면에서 안보이게된다 */
+        }
+
+        .labl-hold{
+            position: relative;
+        }
+/* 앞에 써야하기 때문에 before선택 */
+        .labl-hold::before{
+            content: ' ';
+            display: inline-block;
+            width: 22px;
+            height: 22px;
+            border: 1px solid black;
+            vertical-align: -5px;
+            margin-right: 10px;
+            
+        }
+        /* 인풋요소를 포커스하면 네모 테두리에 스타일 적용 */
+        .inphold:focus-visible + .labl-hold::before{
+            outline: 1px solid rgb(36, 36, 255);
+            /* 현재 아웃라인의 확장 범위를 정할 수 있다 */
+            outline-offset: 1px;
+        }
+        .labl-hold::after{
+            content: '';
+            /* display를 주지않고  absolute를 주면 display : block 으로 바뀐다*/
+            position: absolute;
+            width: 22px;
+            height: 22px;
+            top: 0px;
+            left: 20px;
+            background: url(./images/checkmark.png) 0 0/22px no-repeat ;
+            /* background-image: url(./images/checkmark.png);
+            background-size: 22px;
+            background-repeat: no-repeat; */
+            opacity: 0;
+            /* 효과를 줄수있는 간단한 방법, 상태가 변환할때 적용됨 */
+            transition: all 0.3s ease;
+            
+        }
+        /* 인풋이 선택이되면  체크이미지를 left:0으로해서 체크가 이동하게*/
+        .inphold:checked + .labl-hold::after{
+            left: 0;
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+
+    <input class="inphold txt-hide" type="checkbox" id="hold" >
+    <label for="hold" class="labl-hold"> 
+        로그인 상태 유지
+    </label>
+
+</body>
+</html>
+<!-- 숨기는 기법은 다양함 -->
+<!-- 숨기고 재창조 해야함 , label요소를 이용함 -->
+<!--width: 0px;
+    height: 0px; 하면 화면에서 지울수 있지만 브라우저가 dom요소를 읽을수 없다.
+    스크린 리더기에 접근성 측면에서 문제가 생김  -->
+
+<!-- :checked ,채크박스에서만 사용하는 클래스속성이기때문에 html에 굳이 클래스를 부여하지않고  checked클래스를 사용함-->
+
+<!--   background: url(./images/checkmark.png) 0 0/22px  no-repeat ; -->
+<!-- 반드시 !!! 포지션 다음  / 사이즈 지정 -->
