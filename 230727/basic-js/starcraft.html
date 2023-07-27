@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>스타크래프트</title>
+</head>
+<style>
+  .background {
+      position: relative;
+      background-image: url('background.png');
+      background-size: 500px 330px;
+      width: 500px;
+      height: 330px;
+  }
+  #drone {
+      position: absolute;
+      width: 100px;
+      height: 100px;
+      top: 100px;
+      left: 60px;
+  }
+  #bunker {
+      position: absolute;
+      width: 150px;
+      height: 150px;
+      top: 80px;
+      right: 20px;
+  }
+  #spit {
+      display: none;
+      position: absolute;
+      top: 140px;
+      left: 150px;
+      width: 50px;
+      height: 30px;
+      z-index: 2;
+  }
+</style>
+<body>
+  <h1 id="hp">HP: 3</h1>
+  <div class='background'>
+    <img id='drone' src="drone.png" alt="drone">
+    <img id='spit' src="spit.png" alt="spit">
+    <img id='bunker' src="bunker.png" alt="bunker">
+  </div>
+
+  <script
+  src="https://code.jquery.com/jquery-3.5.1.js"
+  integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+  crossorigin="anonymous">
+  </script>
+
+<script>
+
+  let hp = 3;
+  $('#drone').click(function(){
+    $('#spit').fadeIn();
+    // 침 나타나기
+    $('#spit').animate({'left': '+=250'})
+    // callback함수로 시차 변경 ,fadeOut이 끝난 뒤에 실행하갰다
+
+    $('#spit').fadeOut(function(){
+      hp = hp - 1;
+      $('#hp').text('HP:'  + hp);
+
+      if(hp == 0){
+        $('#bunker').fadeOut();
+      }
+    });
+    
+    $('#spit').css({left:150});
+  
+  });
+</script>
+</body>
+</html>
+
+
+<!-- jQuery 메소드 -->
+<!-- fadeIn()  -->
+<!-- fadeOut() -->
+<!-- .css() -->
+<!-- .animation() -->
+
+<!-- jQuery fadeIn() Method  : 선택한 요소를 서서히 보이게 한다.--> 
+<!-- []옵션 , 지속 시간,완료됐을때 살행  -->
+<!-- $('선택요소').fadeIn([duration ],[comlete]) -->
+              <!-- css 속성-->
+<!-- .animation({properties , [duration], [easing], [comlete]}) -->
+
+<!-- $('선택요소').css({변경하고 싶은 css속성}) -->
+
+
+<!-- 함수에서 실행이 끝나고 난 뒤에 실행하겠다 callback() -->
