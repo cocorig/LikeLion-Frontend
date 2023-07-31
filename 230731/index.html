@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>반응형 이미지</title>
+</head>
+<style>
+  img{
+    /* 1번째 방법 ,  height: auto(기본값)은 자동으로 조절*/
+    /* width: 100%; */
+    /* 원본 사이즈보다 커지진 않는다. 콘테이너 요소에 크기만큼 차지허려면 width: 100%;  원본사이즈를 지키면서 이미지가 깨지면 안될때는   max-width: 100%;사용*/
+    max-width: 100%;
+  }
+  article{
+    width: 100vw;
+    height: 100vh;
+  
+  }
+  article{
+    /* background-image:  url("https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8Y2l0eXxlbnwwfHwwfHw%3D&w=1000&q=80");
+    background-repeat: no-repeat; */
+    /* 이미지를 잘라지않게 부모의 컨테이너만큼 꽉차게 나옴, 반응형으로 조절,이미지가 다 출력(빈 공간이 생김) */
+    /* background-size: contain ; */
+
+    /* 컨테이너 전체를 완전히 덮어버림,,반응형 x  */
+    /* background-size: cover ; */
+    /* 화면의 중심축이 vh의 중심축으로 설정하면 반응형 백그라운드가 된다. */
+    /* background-position: 50% 50%; */
+    /* background-position: center; */
+    /* position / 사이즈 지정 반복여부 (중요도가 떨어지는 속성은 나중에 적음)*/
+    background: url(./img.jpeg) 50% 50% / cover no-repeat; 
+  }
+</style>
+<body>
+ <article>
+  <!-- <img src="./img.jpeg" alt=""> -->
+ </article>
+</body>
+</html>
