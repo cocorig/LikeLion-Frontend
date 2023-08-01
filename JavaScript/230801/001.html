@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>내부 스크립트 | 자바스크립트 삽입위치</title>
+</head>
+<body>
+  <button id="clickBtn">클릭</button>
+  <!-- 내부 스크립트 -->
+  <script>
+  
+    const btn = document.getElementById('clickBtn');
+    btn.addEventListener('click', ()=>window.alert('클릭'))
+  </script>
+</body>
+</html>
