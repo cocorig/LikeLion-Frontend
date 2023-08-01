@@ -1,5 +1,5 @@
 
-# JavaSCript 
+# JavaScript 
 
 ##  초심자가 알아두면 좋은 주요 개념들(‘ECMA Script, JavaScript Runtime, Frameworks, Library, CSS in JavaScript, Module Bundlers’ )
 
