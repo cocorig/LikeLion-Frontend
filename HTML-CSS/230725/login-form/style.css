@@ -1,0 +1,162 @@
+/* reset */
+body,
+ul,
+li,
+h1,
+h2,
+h3,
+p {
+  padding: 0;
+  margin: 0;
+}
+img {
+  vertical-align: top;
+}
+h1,
+h2,
+h3 {
+  font: inherit;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  font: inherit;
+  border: 0;
+  background: none;
+}
+button:enabled {
+  cursor: pointer;
+}
+ul,
+li {
+  list-style: none;
+}
+.article{
+  width: 520px;
+  height: 712px;
+  border-radius: 10px;
+  border: 1px solid var(--c-4-c-4-c-4, #C4C4C4);
+  background: #FFF;
+  display: flex;
+  flex-direction: column;
+}
+.title-box{
+  border-bottom: 1px solid #C4C4C4;
+  text-align: center;
+  padding: 20px 0px;
+ 
+}
+.title{
+  color: #000;
+  font-size: 16px;
+  font-weight: 500;
+  }
+.title::after{
+  content: ' ';
+  display: inline-block;
+  background: url(./img/close.svg) 10% 0/16px no-repeat;
+}
+.content{
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+}
+form{
+  display: flex;
+  flex-direction: column;
+}
+strong{
+  margin-bottom: 24px;
+}
+input{
+  height: 50px;
+  
+}
+
+.btn-group{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.btn{
+  width: 100%;
+  height: 50px;
+  border-radius: 5px;
+  border: 1px solid var(--767676, #767676);
+  background: #FFF;
+  color:  #767676;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 500;
+}
+.face{
+  border-color:  #2D9CDB;
+
+  background-repeat: no-repeat;
+
+
+}
+
+.naver{
+  border-color:  #00BF18;
+}
+.kakao{
+  border-color: #F2C94C;
+}
+
+
+[class^="icon"]::before {
+  position: absolute;
+  display: block;
+  content: "";
+  width: 22px;
+  height: 22px;
+  background-image: url('images_login/icon_sprites_retina.png');
+  background-size: 117px 84px;
+}
+
+.link-sns-login.icon-facebook {
+  border: 1px solid #2D9CDB;
+}
+
+.link-sns-login.icon-naver {
+  border: 1px solid #00BF18;
+}
+
+.link-sns-login.icon-kakao {
+  border: 1px solid #F2C94C;
+}
+
+.icon-google::before {
+  width: 22px;
+  height: 22px;
+  background-position: -52px -10px;
+  /* background: url("images_login/icon_google.png") no-repeat; */
+}
+
+.icon-naver::before {
+  width: 22px;
+  height: 22px;
+  background-position: -10px -10px;
+  /* background: url("images_login/icon_naver.png") no-repeat; */
+}
+
+.icon-kakao::before {
+  width: 22px;
+  height: 22px;
+  background-position: -10px -52px;
+  /* background: url("images_login/icon_kakao.png") no-repeat; */
+}
+
+.icon-facebook::before {
+  height: 24px;
+  width: 13px;
+  background-position: -93px -10px;
+
+  /* background: url("images_login/icon_facebook.png") center no-repeat; */
+
+}

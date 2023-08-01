@@ -14,6 +14,9 @@
       display: flex;
       flex-direction: column;
       border: 4px solid red;
+  
+      /* 최소값으로 100vh을 주면 div를 넘어가던 내용들을 스크롤이 생기면서 다 안고 간다. */
+      height: 100vh;
       min-height: 100vh;
       box-sizing: border-box;
     }
@@ -24,6 +27,7 @@
 
     main {
       background-color: gold;
+         /* height: 3000px; */
       flex-grow: 1;
     }
 
