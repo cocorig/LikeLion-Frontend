@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String</title>
+</head>
+<body>
+ <script>
+let s = 'abcdefghij'
+let ss = 'paullab CEO 이호준 CTO 이하연'
+
+console.log(s.length)  //10
+console.log(s.toUpperCase())  //ABCDEFGHIJ
+console.log(s.toLowerCase()) //abcdefghij
+
+// 존재하는 값을 찾았을 때
+console.log(s.indexOf('c')) //2
+console.log(s.search('c')) //2
+
+// 존재하지 않는 값을 찾았을 때
+console.log(s.indexOf('z')) //-1
+console.log(s.search('z')) //-1
+
+// 정규표현식을 넣었을 때(indexof 같은 경우에는 정규표현식을 허용하지 않습니다.)
+// console.log(s.indexOf(/cd/g))
+console.log(s.search(/cd/g)) //2
+
+console.log(ss.search(/C/g)) //8
+console.log(ss.search(/CTO/g)) //16
+
+// 버전
+
+// indexOF ECMAScript 5
+// 검색 위치 지정 가능 , 정규식표현 불가능
+
+// search ECMAScript 1
+// 정규표현식 가능
+// 검색 위치 지정 가능 기능
+
+
+// indexOf(검색 할 문자,인덱스 번호) -> str.indexOf(substr, pos) pos를 지정하면 검색이 해당 위치부터 시작된다
+let sss = 'paullab CEO 이호준 CTO 이하연'
+console.log(sss.indexOf('C', 9)) // CTO만 찾고 싶어요! -> 16
+// 인덱스 9번째부터 검색 시작
+
+'Blue Whale'.indexOf('Blue');     // returns  0
+'Blue Whale'.indexOf('Blute');    // returns -1
+'Blue Whale'.indexOf('Whale', 0); // returns  5
+'Blue Whale'.indexOf('Whale', 5); // returns  5
+'Blue Whale'.indexOf('Whale', 7); // returns -1
+'Blue Whale'.indexOf('');         // returns  0
+'Blue Whale'.indexOf('', 9);      // returns  9
+'Blue Whale'.indexOf('', 10);     // returns 10
+'Blue Whale'.indexOf('', 11);     // returns 10
+ </script>
+</body>
+</html>
