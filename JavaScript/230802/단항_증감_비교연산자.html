@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>연산자</title>
+</head>
+<body>
+  <script>
+
+  // 단항연산
+  console.log(-2) //-2
+  console.log(-(-2)) //2
+  //console.log(--2) // 증감연산자로 인식해 error
+  console.log(+4) //4
+  console.log(+ '4') //number로 바꿀때
+  // ~ 비트연산자 , 소숫점 제거(부정을 두번)
+  console.log(~~3.14) //3
+
+
+
+// 증감연산자
+  let num = 3; // 증감연산자는 할당연산자( let num = 3)를 통해 할당된 값에만 사용 가능합니다.
+  console.log("증감연산 : ", ++num ); //4 
+  console.log("증감연산 : ", num++ ); //4  
+  console.log("증감연산 : ", --num ); //4 //이때 num은 5가된다 , num-1하니까 4로 출력
+  console.log("증감연산 : ", num-- ); //4 
+  console.log("num : ", num ); // num: 3
+// why? 출력해보니 다 4로 출력이 될까요? 답은 증감연산자에 위치에 있습니다. 그러나 여러분들이 이 증감연산자에 위치를 고려하실 필요는 실무에서 거의 발생하지 않습니다.
+// 아래 둘 다 0 ~ 9까지 출력합니다.
+for (let i = 0; i < 10; ++i) {
+    console.log(i)
+}
+for (let i = 0; i < 10; i++) {
+    console.log(i)
+}
+  
+// 비교연산자(값은 boolean으로 반환) , 등호 두개는 권하지 않는다, 등호 3개를 사용하길 권장!! 정확한 에러 캐치가능
+
+// console.log("비교연산 : ", 2 > 3); //false
+// console.log("비교연산 : ", 2 >= 3); //false
+// console.log("비교연산 : ", 2 < 3);  //true
+// console.log("비교연산 : ", 2 <= 3); //true
+// console.log("비교연산 : ", 2 == 3); //false
+// console.log("비교연산 : ", 2 === 3);//false
+console.log("비교연산 : ", 2 != 3);  //true
+console.log("비교연산 : ", 2 === 3); //false
+console.log("비교연산 : ", 2 !== 3); //true
+console.log("비교연산 : ", 2 == '2'); // js에서는 true(타입이 다르더라도 값이 같기 때문에 true)  , 다른 언어에서는 false
+console.log("비교연산 : ", 2 === '2'); //js에서는 false , === 는 타입과 값 둘다 같아야 true, 
+//다른 언어에서 이런 문법이 없다. 
+
+// 전에는 css, js 애러가 안나고 SW가 실행되는데 중점을 두었다면
+// 현재는 SW 실행이 안되어도 애러를 정확하게 파악할 수 있도록 애러를 출력해주는 것에 중점을 많이 둡니다. 
+  </script>
+</body>
+</html>

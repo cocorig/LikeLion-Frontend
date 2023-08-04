@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>padStart 메서드</title>
+</head>
+<body>
+<script>
+
+
+// padStart
+let text7 = '123'
+text7.padStart(5, '0') // '00123'
+// 카카오 입사문제 일부(padStart, replace만 사용)
+// 우리의 목표: 00101 -> '  # #'
+let text8 = '101'
+text8.padStart(5, '0').replaceAll('0', ' ').replaceAll('1', '#')
+
+</script>
+
+</body>
+</html>

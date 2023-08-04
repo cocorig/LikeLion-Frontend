@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>split 메소드</title>
+</head>
+<body>
+    <script>
+        
+
+// split
+s.split(' ') // ['paullab', 'CEO', '이호준']
+'010-5044-2903'.split('-') // ['010', '5044', '2903']
+'010-5044-2903'.split(' ') // 띄어쓰기가 없습니다!
+'010-5044-2903'.split('') // ['0', '1', '0', '-', '5', '0', '4', '4', '-', '2', '9', '0', '3']
+
+// 문제: text1 ~ text4를 split을 사용해서 아래 배열로 만들어주세요.
+let text1 = 'aa bb cc dd'
+let text2 = 'aa-bb-cc-dd'
+let text3 = 'aa,bb,cc,dd'
+let text4 = 'aa,bb-cc-dd' // 중급자 분들만 하세요.
+// ['aa', 'bb', 'cc', 'dd']
+// 해답코드
+// 1.
+text1.split(' ')
+// 2.
+text2.split('-')
+// 3.
+test3.split(',')
+// 4.
+text4.replace(',', '-').split('-') // text4에 원본에 반영되는 것은 아닙니다.
+text4.split(/[,-]/)
+
+let text5 = text4.replace(',', '-')
+text5.split('-')
+    
+
+
+
+    </script>
+</body>
+</html>
