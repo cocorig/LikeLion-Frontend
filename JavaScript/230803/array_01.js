@@ -1,5 +1,5 @@
 // 1. array에 여러가지 형태
-let arr1 = []
+let arr1 = [10,20,30]
 
 let arr2 = [1, 2, 3]
 
@@ -36,3 +36,10 @@ arr7.flat()
 arr7.flat().flat().flat()
 arr7.flat(3)
 arr7.flat(Infinity)
+
+//다른 메모리 공간에 할당됨
+console.log([10,20,30] ==  [10,20,30]);//false
+
+function test(){
+  test.hayeon = 1000;
+}
