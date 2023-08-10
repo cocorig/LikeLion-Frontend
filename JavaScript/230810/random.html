@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>random 함수</title>
+</head>
+<body>
+ <script>
+  // Math.random(); // 0 ~ 0.999999... 사이의 실수
+
+    // Math.random() * 10 // 0 ~ 9.99999999...
+
+    // Math.random * 10 + 2 // 2 ~ 11.99999999...
+
+    // Math.random * 8 + 2 // 2 ~ 9.9999999 ....
+
+    // parseInt(Math.random * 8 + 2);
+
+    function lottoGenerator() {
+      const lottArr = [];
+
+      while (lottArr.length < 6) {
+
+          // 1 ~ 44.999999
+          const result = parseInt(Math.random() * 45 + 1);
+
+          if (!lottArr.includes(result)) {
+              lottArr.push(result);
+          }
+      }
+
+      return lottArr;
+    }
+
+    console.log(lottoGenerator());
+  Math.random() // 0 ~ 1사이의 실수 -> 1은 절대 안나옴, 0.9999999999...사이의 실수까지 반환
+  Math.random()*3 // 0 ~ 2.999999999... 0.1적은 숫자까지 구할수 있다.
+  Math.random()*10 + 2 // 2 ~ 11.999999999
+  // 더했을 때 시작할 부분 , 
+  Math.floor((Math.random() * 10) + 1)  // 1 ~ 10까지의 랜덤한 숫자
+ </script> 
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>복습</title>
+</head>
+<body>
+ <script>
+  const avengers = ['spiderman', 'ironman', 'hulk', 'thor'];
+
+  // 1. splice ()메소드
+  // avengers.splice(3);
+  // avengers.splice(2,0,'blackWidow');
+  // avengers.splice(1,1,'hulk');
+
+
+  // 2.  slice() 메소드  , 원본은 보존
+  const newArr = avengers.slice(0,2);
+  console.log(newArr);  //['spiderman', 'ironman']
+
+  //원본 배열은 그래도 보존
+  console.log(avengers); //) ['spiderman', 'ironman', 'hulk', 'thor']
+
+  // 3. sort()메소드 
+  const num2 = [23, 5, 1000, 42];
+  // console.log(num2.sort()); //[1000, 23, 42, 5]
+  let ans= num2.sort((a , b)=> a - b);
+  console.log(ans); /// [5, 23, 42, 1000]
+
+  const arr =  ['나',' 가' , '라' , '다']
+  // console.log(arr.sort()); // [' 가', '나', '다', '라']
+
+ console.log(arr.sort((a , b)=> console.log(a,b)));  //['나', ' 가', '라', '다'] 정렬 xxx
+// -가 나오면 원소의 위치를 바꿈, -가아니면 위치를 바꾸지 않는다. -> 가 - 나 ? -가 나오지않는다. 방법이 잘못됨
+
+
+ </script>
+</body>
+</html>
