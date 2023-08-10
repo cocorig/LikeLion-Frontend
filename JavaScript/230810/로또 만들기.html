@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>로또  만들기</title>
+    <script src="https://kit.fontawesome.com/32cd117d3a.js" crossorigin="anonymous"></script>
+</head>
+<style>
+  /* reset */
+  body,
+  ul,
+  li,
+  h1,
+  h2,
+  h3,
+  p {
+    padding: 0;
+    margin: 0;
+  }
+  img {
+    vertical-align: top;
+  }
+  h1,
+  h2,
+  h3 {
+    font: inherit;
+  }
+  
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  button {
+    font: inherit;
+    border: 0;
+    background: none;
+  
+  }
+  button:enabled {
+    cursor: pointer;
+  }
+
+  ul,
+  li {
+    list-style: none;
+  }
+  article{
+    display: flex;
+    padding-top: 40px;
+    justify-content: center;
+    gap: 10px;
+  }
+  ul{
+    display: inline-flex;
+    gap: 3px;
+    color: white;
+
+  }
+
+  li{
+    width: 50px;
+    height: 50px;
+    font-size: 30px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 50px;
+  }
+  li:nth-child(1){
+    background-color: rgb(231, 85, 85);
+  }
+  li:nth-child(2){
+    background-color: rgb(232, 125, 75);
+  }
+  li:nth-child(3){
+    background-color: rgb(66, 200, 109);
+  }
+  li:nth-child(4){
+    background-color: rgb(60, 51, 187);
+  }
+  li:nth-child(5){
+    background-color: rgb(218, 234, 97);
+  }
+  li:nth-child(6){
+    background-color: rgb(138, 60, 127);
+  }
+  button{
+    font-size: 40px;
+  }
+  button i{
+
+
+    vertical-align: middle;
+  }
+</style>
+<body>
+  <article>
+    <ul class="lotto">
+      <!-- <li>33</li>
+      <li>44</li>
+      <li>55</li>
+      <li>66</li>
+      <li>77</li>
+      <li>88</li> -->
+    </ul>
+    <button class="btn"><i class="fa-sharp fa-solid fa-rotate"></i></button>
+  </article>
+  
+ <script>
+  const lottoList = document.querySelector('.lotto')
+  const btn = document.querySelector('.btn');
+  // 1번 45 중복없이 6개 -> 배열로 반환 
+  // 1 ~ 45사이의 랜덤한 숫자를 뽑아낸다.
+  
+  //로또 번호를 재생성하는 함수 , 번호가 담긴 배열을 반환
+ 
+  function generateRandomNumbers() {
+    let newLottoArr = [];
+    while (newLottoArr.length < 6) {
+      let randomNumber = Math.floor((Math.random() * 45) + 1);
+      if (!newLottoArr.includes(randomNumber)) {
+        newLottoArr.push(randomNumber);
+      }
+    }
+    return newLottoArr;
+  }
+
+  function updateLottoList(numbers) {
+    lottoList.innerHTML = ''; // Clear the existing list
+    numbers.forEach(number => {
+      lottoList.innerHTML += `<li>${number}</li>`;
+    });
+  }
+
+  // Initial generation of random numbers
+  let lottoArr = generateRandomNumbers();
+  updateLottoList(lottoArr);
+
+  btn.addEventListener('click', () => {
+    // Regenerate and update the list
+    lottoArr = generateRandomNumbers();
+    updateLottoList(lottoArr);
+  });
+</script>
+
+ </script>
+</body>
+</html>
