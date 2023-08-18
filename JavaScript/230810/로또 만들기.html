@@ -114,34 +114,34 @@
   // 1번 45 중복없이 6개 -> 배열로 반환 
   // 1 ~ 45사이의 랜덤한 숫자를 뽑아낸다.
   
-  //로또 번호를 재생성하는 함수 , 번호가 담긴 배열을 반환
- 
+  //로또 번호를 재생성하는 함수 ,랜덤번호가 담긴 배열을 반환
   function generateRandomNumbers() {
-    let newLottoArr = [];
-    while (newLottoArr.length < 6) {
-      let randomNumber = Math.floor((Math.random() * 45) + 1);
-      if (!newLottoArr.includes(randomNumber)) {
-        newLottoArr.push(randomNumber);
-      }
+    const newLottoSet = new Set();
+
+    while (newLottoSet.size < 6) {
+      const randomNumber = Math.floor((Math.random() * 45) + 1);
+      newLottoSet.add(randomNumber)
     }
-    return newLottoArr;
+    return newLottoSet;
   }
 
-  function updateLottoList(numbers) {
-    lottoList.innerHTML = ''; // Clear the existing list
-    numbers.forEach(number => {
-      lottoList.innerHTML += `<li>${number}</li>`;
+  function updateLottoList(newLottoSet) {
+    //  초기화
+    lottoList.innerHTML = ''; 
+    newLottoSet.forEach(v => {
+      lottoList.innerHTML += `<li>${v}</li>`;
     });
   }
 
-  // Initial generation of random numbers
-  let lottoArr = generateRandomNumbers();
-  updateLottoList(lottoArr);
+
+  const lottoSet = generateRandomNumbers();
+  updateLottoList(lottoSet);
 
   btn.addEventListener('click', () => {
-    // Regenerate and update the list
-    lottoArr = generateRandomNumbers();
-    updateLottoList(lottoArr);
+     //  로또배열 업데이트
+      const newLottoSet =  generateRandomNumbers();
+      console.log(newLottoSet);
+      updateLottoList(newLottoSet);
   });
 </script>
 
