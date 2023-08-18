@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    점심 식단
+    <article id="container">
+        <ul>
+            <li>탕수육</li>
+            <li class="item-second">유산슬</li>
+            <li>짜장면</li>
+        </ul>
+    </article>
+    저녁 식단
+    <article>
+        <ul>
+            <li>된장국</li>
+            <li class="item-second">김치찌게</li>
+            <li>해장국</li>
+        </ul>
+    </article>
+
+  <script>
+    const container =  document.getElementById('container');
+    const innerlis = container.getElementsByTagName('li');
+    const item3 = container.querySelectorAll('li')
+    // const lis = document.getElementsByTagName('li')
+    // const firstli = lis[0]
+    // const litow = document.getElementsByClassName('.item-second');
+    
+    console.log(container);
+    console.log(innerlis); // HTMLCollection(3) [li, li.item-second, li]
+    console.log(item3); // NodeList(3) [li, li.item-second, li]
+ 
+ //😎  HTMLCollection과 NodeList
+// HTMLCollection과 NodeList 는 모두 배열과 비슷한 객체(array-like object) 형태를 가집니다. 때문에 안에 있는 데이터에 접근하기 위해서 배열처럼 원소의 인덱스로 접근한다는 공통점이 있지만,
+
+// 가장 큰 차이점은 해당 객체에 포함될 수 있는 DOM 요소의 유형입니다. HTMLCollection은 HTML만 포함하지만, NodeList는 모든 유형의 DOM 요소 즉, text, 주석 등을 모두 포함합니다.
+
+// 또 다른 차이점은 객체를 구성하는 값이 변경 가능한지 여부입니다. HTMLCollection은 실시간으로 업데이트되며, 해당 객체의 각 속성에 대한 변경 사항이 즉시 반영됩니다. 반면에, NodeList는 정적이므로 해당 객체에 대한 변경 사항은 즉시 반영되지 않습니다.
+
+// 마지막으로 사용할 수 있는 메소드가 다릅니다. NodeList는 forEach 같은 배열 메소드를 사용할 수 있지만 HTMLCollection은 또 다른 기능을 지원합니다.
+  </script>
+</body>
+</html>

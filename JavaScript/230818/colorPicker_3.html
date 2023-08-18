@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>버튼 조작하기</title>
+</head>
+    <style>
+        body{
+            text-align: center;
+        }
+        .box{
+            width: 500px;
+            height: 500px;
+            margin: 0 auto;
+
+        }
+        ul{
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+        li{
+            list-style: none;
+        }
+        button{
+            margin-top: 30px;
+    
+        }
+        .red{
+            background-color: red;
+        }
+        .blue{
+            background-color: blue;
+        }
+        .yellow{
+            background-color: yellow;
+        }
+    </style>
+<body>
+    <main>
+        <div class="box yellow"></div>
+        <ul>
+            <li>
+                <button class="red-btn">RED</button>
+            </li>
+            <li>
+                <button class="yellow-btn">YELLOW</button>
+            </li>
+            <li>
+                <button class="blue-btn">BLUE</button>
+            </li>
+        </ul>
+    </main>
+    <script>
+        const box = document.querySelector('.box');
+        const redBtn = document.querySelector('.red-btn');
+        const yellowBtn = document.querySelector('.yellow-btn');
+        const blueBtn = document.querySelector('.blue-btn');
+
+       function changeColor(color){
+
+        box.classList =`box ${color}`;
+
+       }
+
+        redBtn.addEventListener('click',()=>{
+            changeColor('red')
+        })
+        yellowBtn.addEventListener('click',()=>{
+            changeColor('yellow')
+        })
+        blueBtn.addEventListener('click',()=>{
+            changeColor('blue')
+        })
+
+    </script>
+    <!-- style객체는 자바스크립트로 계산된 결과를 나타낼 때 -->
+    <!--  이런 경우가 아니라면 클래스를 통해서 조작 -->
+</body>
+
+</html>
+

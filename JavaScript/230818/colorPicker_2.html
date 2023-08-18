@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+  <style>
+    .canvas{
+      width: 500px;
+      height: 500px;
+      background-color: red;
+    }
+  </style>
+<body>
+
+  <div class="container">
+    <div class="canvas"></div>
+
+    <div class="btn-box">
+        <button class="cls-btn" data-color="red">red</button>
+        <button class="cls-btn" data-color="yellow">yellow</button>
+        <button class="cls-btn" data-color="green">green</button>
+    </div>
+</div>
+
+<script>
+    document.querySelectorAll('.cls-btn').forEach((v, i) => {
+      // console.log(v,i);
+        v.addEventListener('click', (e) => {
+            const color = e.target.dataset.color;
+
+            document.querySelector('.canvas').style.cssText = `background-color: ${color};`;
+        });
+    });
+</script>
+</body>
+</html>
