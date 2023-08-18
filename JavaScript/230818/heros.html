@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>히어로 json포맷을 객체로 만들기</title>
+</head>
+<body>
+ <script>
+/// 최신 문법
+  async function fetchRequest() {
+    const response = await fetch();
+    const jsonData =  await response.json();
+  }
+
+// 비동기
+  let jsonObj = {};
+  
+  function xhrRequest(){
+   const requestObj =  new XMLHttpRequest();
+   requestObj.open('GET','heros.json' ); // 통신 채널 오픈
+   requestObj.send(); // 서버로 통신 보냄
+     // 응답이 오면 통신상태(onreadystatechange)가 바뀜 -> 변화가 감지되면 함수를 실행한다
+   requestObj.onreadystatechange = ()=>{
+    // responseText에 파일이 담겨있다(heros.json)
+    // 통신이 다 끝난 상태 && 서버의 상태가 200 , 서버에 데이터를 잘 받은 상태, 서버에서의 로직이 다 끝나고 서버가 잘 보냈어 하는게 200
+    // 서버로 부터 통신을 잘 받은 상태 4
+    if(requestObj.readyState == 4 && requestObj.status == 200){
+      
+      jsonObj = JSON.parse(requestObj.responseText);
+    }
+  }
+  }
+  xhrRequest();
+//jsonObj
+//-> {squadName: '슈퍼히어로', members: Array(2)}
+  
+  // open(서버통신방식, 데이터 주소)
+  // GET : 서버에게 데이티 요청
+
+  // 상태: 준비 , 요청 , 완료 상태가 바뀔 때마다 onreadystatechange 바뀌면 응답이 온다  -> 콘솔이 찍힘
+ </script>
+</body>
+</html>
