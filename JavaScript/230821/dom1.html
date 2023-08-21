@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>문자열을 사용해 element, text 노드를 생성하거나 추가하기</title>
+</head>
+<body>
+
+  <p></p>
+  <input type="text">
+  <button>Write Something!</button>
+
+  <script>
+    const myBtn = document.querySelector('button');
+    const myP  = document.querySelector('p');
+    const myInput = document.querySelector('input');
+    
+    //textContent => text노드를 만들어줌, 값을 할당하는 식으로 작동, 생성+위치 한번에!
+    myBtn.addEventListener('click',()=>{
+      myP.textContent = myInput.value;
+    });
+
+    //  input의 값을 실시간으로 볼 수 있다. input 이벤트 , 사용자 입력 트리거 반영
+    myInput.addEventListener('input' ,()=>{
+      // console.log(myInput.value);
+      myP.textContent =  myInput.value;
+    })
+
+    myP.innerHTML = "<strong>I'm Strong!!</strong>";
+
+    //myP.innerHTML
+    // "<strong>I'm Strong!!</strong>"
+
+
+    //myP.innerHTML = '<em>em</em>'
+    //'<em>em</em>'
+
+
+    // myP.innerHTML = 'em'
+    // 'em'
+
+
+    //textContent =>들어오는 문자를  무조건 문자열로 바꿈(그냥 text로만 하려면 이걸 사용 )
+    //innerHTML -> 그냥  text면 문자열로 , html으로 바꿀수 있는 문자가 들어온다면 마크업 문자
+
+    // innerText  -> textContent와 기능은 비슷
+
+
+  </script>
+</body>
+</html>

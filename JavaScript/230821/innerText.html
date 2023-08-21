@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>textContent vs innerText </title>
+</head>
+<body>
+  <h3>원본 요소:</h3>
+  <p id="source">
+    <style>
+      #source {
+        color: red;
+      }
+    </style>
+    아래에서<br />이 글을<br />어떻게 인식하는지 살펴보세요.
+    <span style="display:none">숨겨진 글</span>
+  </p>
+
+  <h3>textContent 결과:</h3>
+  <textarea id="textContentOutput" rows="6" cols="30" readonly>...</textarea>
+  <h3>innerText 결과:</h3>
+  <textarea id="innerTextOutput" rows="6" cols="30" readonly>...</textarea>
+
+
+  <script>
+    const source = document.getElementById("source");  //p
+    const textContentOutput = document.getElementById  ("textContentOutput");
+    const innerTextOutput = document.getElementById("innerTextOutput");
+
+    textContentOutput.innerHTML = source.textContent; //p태그안에 들어있는 모든 text들  , br태그 제거 , 스타일태그 무시 , p탸그안의 text를 정말 순수한 text로 다 전달
+    innerTextOutput.innerHTML = source.innerText; 
+    // br태그 적용 , html코드를 인식함 ,display 속성만 인식, css는 일부 속성만 인식
+    //  <style>
+    //   #source {
+    //     color: red;
+    //   }
+    // </style> 인식안함
+
+    // innerText 대신 textContent 사용 권장
+  </script>
+</body>
+</html>

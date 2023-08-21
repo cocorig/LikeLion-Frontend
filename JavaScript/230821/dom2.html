@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>요소 제어</title>
+</head>
+<body>
+  <div id="parentElement">
+    <span id="childElement">hello guys~</span>
+  </div>
+  
+  <div class="parent"></div>
+  <ul></ul>
+  <button>생산 시작!</button >
+  <script>
+    const text = document.createElement('p');// 가상 돔 (메모리 공간에만 존재)
+    const text1 = document.createElement('p');// 가상 돔 (메모리 공간에만 존재)
+    const textInside = document.createTextNode('문장입니다'); // 메모리 상에만 존재하는 문단 , 말그대로 text노드를 만듬, 요소안에 들어가는 콘텐츠
+    text.appendChild(textInside);
+    const parent =  document.querySelector('.parent');
+    // parent.appendChild(text);
+    // parent.appendChild(text1);
+
+    parent.append('text입니다',text, text1);
+    // parent.removeChild(text1);
+
+    // parent.remove();//안의 요소를 모두 지움
+    // text.innerText = 'text';
+
+
+    const myBtn = document.querySelector("button");
+    const myUl = document.querySelector("ul");
+
+    myBtn.addEventListener('click', function(){
+      for(let i=0; i < 5; i++){
+        const myLi = document.createElement('li');
+        const btnDel = document.createElement('button');
+        const btnTxt = document.createTextNode('버튼');
+
+        btnDel.append(btnTxt);//<button>버튼</button>
+
+        btnDel.addEventListener('click', ()=>{
+          myLi.remove(); // 버튼을 누르면 li가 지워짐
+        });
+
+        myLi.append('삭제하기: ', btnDel);
+        //  <li> 삭제하기:<button>버튼</button> </li>
+        myUl.appendChild(myLi); // ul태그안에 li태그 넣기
+        }
+    });
+    // myBtn.addEventListener('click', function(){
+    //   for(let i=0; i < 5; i++){
+    //     const myLi = document.createElement('li');
+    //     myUl.appendChild(myLi);
+    //   }
+    // })
+
+    // 순서대로 붙게됨
+    myUl.append('text1');
+    myUl.append('text2'); 
+    myUl.append('text3');
+    // <ul>
+    //   text1
+    //   text2
+    //   text3
+    // </ul>
+
+
+    //첫번째 자식으로 붙히기
+    // parentElement.insertBefore(target, location); target요소를 parentElement의 자식인 location 위치 앞으로 이동합니다.
+
+    var span = document.createElement("span");
+    var sibling = document.getElementById("childElement");
+    var parentDiv = document.getElementById("parentElement");
+    parentDiv.insertBefore(span, sibling);
+  </script>
+</body>
+</html>

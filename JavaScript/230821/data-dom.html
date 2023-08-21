@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>요소에 데이터를 저장하도록 도와주는 data 속성</title>
+</head>
+<body>
+  <ul>
+    <li>
+        <button data-name="redcola" data-cost="1000">
+            <img src="" alt="콜라이미지">
+            <span>redcola</span>
+            <strong>1000</strong>
+        </button>
+    </li>
+</ul>
+<script>
+     const btn = document.querySelector('button');
+        btn.addEventListener('click', function () {
+            console.log(this.dataset.name, this.dataset.cost);
+            console.log(this.querySelector('span').textContent);
+        });
+</script>
+</body>
+</html>
+
+    
+    <!-- data-* 속성을 사용하면 HTML 요소에 추가적인 정보를 저장하여 마치 프로그램 가능한 객체처럼 사용할 수 있게 합니다. 단,  data 속성의 이름에는 콜론(:) 이나 영문 대문자가 들어가서는 안됩니다. -->

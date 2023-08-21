@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>textContent 와 innerText의 차이</title>
+</head>
+<style>
+  .hidden{
+    display: none;
+  }
+</style>
+<body>
+
+  <!--  로그인 상태에 따라서 숨겨야 하는 텍스트가 있는 경우 -->
+ <figure>
+  <img src="" alt="청바지 삼종세트">
+  <figcaption>상풍 가격 : 29,900원 
+    <span class="hidden">VIP 회원이라면 29,900원!</span>
+  </figcaption>
+ </figure>
+
+ <script>
+  const cost =  document.querySelector('figcaption');
+  console.log(cost.textContent); // 모든 택스트를 가져옴 , 값을 뽑아낼 때, 집어넣고 싶을 때
+  // /상풍 가격 : 29,900원 
+    // VIP 회원이라면 29,900원!
+  console.log(cost.innerText);  // display: none;이 적용된 요소는 가져오지 않는다 -> 정말 순수하게 text가 필요할 때
+//상풍 가격 : 29,900원
+
+const msg = '경고!!';
+    cost.innerHTML =
+        `<dialog>
+            <div>
+                <p>${msg}</p>
+            </div >
+        </dialog>`;
+ </script>
+</body>
+</html>
