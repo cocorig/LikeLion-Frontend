@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+  <article class="parent">
+    <ol>
+        <li><button class="btn-first" type="button">버튼1</button></li>
+        <li><button type="button">버튼2</button></li>
+        <li><button type="button">버튼3</button></li>
+    </ol>
+</article>
+
+<script>
+    const parent = document.querySelector('.parent'); // article 제일 부모태그
+ // 화살표 함수안의 this는 상위 스코프를 가리킴(여기서 window)
+    parent.addEventListener('click',(e)=>{
+        console.log(this); // 전역객체, window를 가리킴
+        console.log(e.currentTarget); /// parent
+
+        console.log(e.target); // 클릭하고 있는 요소
+        console.log(e.target.nodeName); // html태그 이름 대문자
+    // 이벤트가 발생한 대상을 조건식으로 특정하기
+        if (event.target.nodeName === "LI") {
+            event.target.textContent = "hello";
+        }
+    });
+
+  
+		const myObj = { // 상위스코프
+        name: 'jaehyun',
+        walk() { // 상위 스코프 -> walk()의 this는 myObj를 가리킴
+            parent.addEventListener('click', () => {
+                            //jaehyun
+                console.log(this.name + ' is walking');
+                // 화살표함수 내부 this는 상위 스코프를 가리킨다
+            })
+        }
+    }
+    myObj.walk();
+</script>
+</body>
+</html>
+
+<!--  화살표함수를 사용했을 때의 this는 무엇을 가리킬까?  상위 스코프를 가리킴-->
+<!-- 이는 event.currentTarget 속성의 참조값과 유사합니다.  -->
+<!-- 만약 이벤트 리스너 함수를 화살표 함수로 쓴다면 this 가 가리키는 대상이 달라진다는 점에 유의하세요. -->

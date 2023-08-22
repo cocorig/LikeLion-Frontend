@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>객체지향</title>
+</head>
+<body>
+ <script>
+ 
+  const me = {
+    name : '한재현',
+    address : '제주도 제주시 인다 1길',
+    phoneNum : '010-8000-0000',
+    canWalk : function(){
+        console.log('재현이가 걷는다.');
+    },
+    teaching : function(student){
+        student.levelUp();
+    }
+}
+
+const lion = {
+    level: 1,
+    levelUp : function(){
+        this.level++; // 레벨 1 증가!! 
+    }
+    //이처럼 객체와 객체가 서로 메소드를 통해 상호작용하게 하는것이 바로 객체지향 프로그래밍이라고 할 수 있습니다.
+}
+me.teaching(lion);
+
+const catButler = {
+  name : 'hayeon',
+  playWith : function(pet){
+    pet.intimacyUP();
+  }
+}
+const myCat = {
+  name : 'coco',
+  intimacy : 100,
+  intimacyUP : function(){
+    this.intimacy += 100;
+  }
+}
+catButler.playWith(myCat);
+console.log(myCat.intimacy);
+
+ </script>
+</body>
+</html>
+
+<!-- 객체지향은 프로그래밍 방법론중에 하나로, 프로그램을 작성할 때 객체들을 만들어 서로 소통하도록하는 방법이라고 할 수 있습니다. -->
+<!-- 객체 지향의 객체는 우리가 표현하고자 하는 구체적인 사물을 추상적으로 표현한것 이라고 볼 수 있습니다.-->
+<!-- 우리가 표현하고자 하는 구체적인 사물을 추상적으로 표현한것 -->
+<!-- 행동과 상태를 가집니다. 여기서 행동은 메소드, 상태는 프로퍼티 정도로 이해하시면 됩니다 -->
+
+<!-- 하지만 문제가 있습니다. 우리가 만들어낸 객체는 한번 생성하고 나면 끝입니다. 좀 더 효율적인 방법으로 객체를 만들어 보겠습니다.  생성자!?!?!!-->

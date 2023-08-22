@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>생성자함수 살습</title>
+</head>
+<body>
+ <!-- - 실습 : 음식 이름의 배열을 전달하면 배열안에서 랜덤하게 메뉴를 뽑아내는 로봇객체의 생성자를 만들어보세요. -->
+
+ <script>
+  // 1. 생성자 함수를 만듬
+  function RobotFactory(foodNames){
+    this.menu = foodNames;
+    // this.sayMenu = function () {
+    //     // 배열의 길이에 해당하는 범위의 랜덤한 값을 뽑아냅니다.
+    //     const index = parseInt(Math.random() * this.menu.length);
+    //     console.log(`삐리비리비리 오늘의 메뉴는! ${this.menu[index]}`);
+    // }
+  }
+
+
+  RobotFactory.prototype.sayMenu = function(){
+      // 배열의 길이에 해당하는 범위의 랜덤한 값을 뽑아냅니다.
+      const index = Math.floor(Math.random()*this.menu.length);
+      console.log(`🤖 띠리리리.. 오늘의 메뉴는 : ${this.menu[index]}입니다`); ;
+    }
+
+
+  const robot1 = new RobotFactory(['샌드위치', '쌀국수' ,'삼겹살'])
+  // robot1에 함수를 붙어준적이 없지만
+  const robot2 =  new RobotFactory(['케이크', '초콜릿' ,'아이스크림'])
+  console.log(robot1.sayMenu());
+  console.log(robot2.sayMenu());
+
+
+
+    
+ </script>
+</body>
+</html>
+
+<!-- 똑같은 함수를 가지고있는데 
+robot1.sayMenu === robot2.sayMenu
+false가 나옴 그 말은 똑같은 함수지만  sayMenu를 새로 생성하고있다는것 -> 메모리가 낭비된다.
+이 자원의 낭비를 해결하기 위해 프로토타입이 나옴-->
+
+
+<!-- RobotFactory.prototype.sayMenu 이렇게 고치면 해결
+robot1.sayMenu === robot2.sayMenu
+true -->
