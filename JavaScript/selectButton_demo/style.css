@@ -73,6 +73,7 @@ button {
   display: none;
 }
 
+/*  .btn-selec에 on클래스가있으면 list를 display: block*/
 .btn-select.on+.list {
   display: block;
 }
