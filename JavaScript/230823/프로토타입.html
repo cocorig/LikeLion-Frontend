@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+      객체를 생성자함수를 통해서 생성해보기
+    </title>
+</head>
+<body>
+ <script>
+//실습 : 객체를 생성자함수를 통해서 생성해보기
+
+// const catButler = {
+//   name : 'hayeon',
+//   playWith : function(pet){
+//     pet.intimacyUP();
+//   }
+// }
+
+function CatButler(){
+  this.name = '하연'; // 프로퍼티 등록
+}
+//  프로토타입으로 메소드 등록 
+CatButler.prototype.playWith = function(pet){
+    pet.intimacyUP();
+}
+
+
+// const myCat = {
+//   name : 'coco',
+//   intimacy : 100,
+//   intimacyUP : function(){
+//     this.intimacy += 100;
+//   }
+// }
+// catButler.playWith(myCat);
+// console.log(myCat.intimacy);
+
+function Mycat(){
+  this.name = 'coco';
+  this.intimacy  = 100;
+}
+Mycat.prototype.name =  'coco'; // prototype으로 바꾸면 모든 인스턴스는 같은 값을 바라보게된다.
+Mycat.prototype.intimacyUP = function(){
+    this.intimacy += 100;
+}
+const catButler =  new CatButler();
+const cat = new Mycat();
+const cat2 = new Mycat();
+
+/// --------------------------  
+
+
+
+/// 객체
+function NewFactory2(name){
+  this.name = name;
+}
+NewFactory2.prototype.sayYourName = function(){
+  console.log(`삐리비리. 제 이름은 ${this.name}입니다. 주인님.`);
+}
+const robot =  new NewFactory2('gkdus')
+
+
+
+ // 객체를 생성자함수를 통해서 생성해보기
+ const me = {
+        name: '한재현',
+        address: '제주도 제주시 인다 1길',
+        phoneNum: '010-8000-0000',
+        canWalk: function () {
+            console.log('재현이가 걷는다.');
+        },
+        teaching: function (student) {
+            student.levelUp();
+        }
+    }
+
+    const lion = {
+        level: 1,
+        levelUp: function () {
+            this.level++;
+        }
+    }
+
+    function Me(myAddress) {
+        this.address = myAddress;
+        this.phoneNum = '010-8000-0000';
+        function canWalk() { };
+    }
+
+    Me.prototype.name = "이하연";
+
+    Me.prototype.canWalk = function () {
+        console.log('재현이가 걷는다.');
+    };
+
+    Me.prototype.teaching = function (student) {
+        student.levelUp();
+    }
+
+    function Lion() {
+        this.level = 1;
+    }
+
+    Lion.prototype.levelUp = function () {
+        this.level++;
+    }
+
+
+
+
+function Test(){};
+
+const obj = new Test();
+
+console.log(obj1.prototype); // undefined
+console.log(obj1.__proto__ === Test.prototype);  // true 
+// 잠시만요 … prototype 과 __proto__ 는 다른건가요???
+// 네 맞습니다. prototype은 오직 function안에 존재하는 참조값입니다. __proto__  는 객체 안에 존재하는 숨겨진 프로퍼티입니다. 인스턴스는 __proto__를 통해 생성자 함수의 prototype에 접근하여 필요한 여러가지 값과 메서드를 사용할 수 있습니다.
+
+/// --------------------------
+
+
+
+ </script>
+</body>
+</html>
+
+
+<!-- robot는 NewFactory2의 인스턴스이기 때문에  constructor으로 생성-->
+
+<!-- new -->
+<!-- 생성자 함수의 this가 인스턴스를 보게한다 -->
+<!-- prototype은 항상 함수안에 존재하는 함수 값이다 -->
+<!-- __proto_ 는 인스턴스(객체) 안에만 존재한다 -->
+<!--  이 둘은 서로를 참조하고 있다 -->
+
+<!-- robot                                 숨겨진 프로퍼티 -> __proto__
+NewFactory2 {name: 'gkdus'}name: "gkdus"[[Prototype]]: Object
+robot.__proto__
+{sayYourName: ƒ, constructor: ƒ}
+robot.__proto__ === NewFactory2.prototype
+true
+robot
+NewFactory2 {name: 'gkdus'}
+const robot2 = new NewFactory2
+undefined
+robot.sayYourName === robot2.sayYourName
+true -->
+
+<!-- __proto__ 프로퍼티는 자신을 만든 생성자 함수의 prototype을 참조하는 역할 -->
+<!-- 즉, new 키워드를 통해 생성자 함수의 prototype과 인스턴스의 __proto__ 가 연결됩니다. -->

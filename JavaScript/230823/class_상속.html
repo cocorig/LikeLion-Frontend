@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>classes</title>
+</head>
+<body>
+ <script>
+
+class Robot {
+    constructor(name) {
+        this.myName = name;
+    }
+
+    sayYouName() {
+        console.log(`제 이름은 ${this.myName} 입니다 삐리비리리비리`);
+    }
+}
+
+class BabyRobot extends Robot {
+        constructor(name) {//constructor를 쓴다면 super를 써서 상속받아야함
+          // this.age = 10;  // super보다 앞에서 선언하면 에러  
+          super(name); 
+          this.age = 10; // 프로퍼티 설정
+        }// constructor를 없애도 자동으로 super가 생성된다
+    }
+const babyRobot = new BabyRobot('baby');
+ </script>
+</body>
+</html>
+
+<!-- class 상속받기
+
+클래스의 상속은 extends 키워드를 사용합니다.
+
+상속을 받는 클래스는 ‘파생 클래스’(derived classes)라고 부릅니다.
+이때 부모 클래스의 프로퍼티를 상속받기 위해 super 함수를 사용합니다. 이때 super는 부모 생성자를 참조합니다. 
+
+**super 사용시 주의할 점**
+
+- 만약 파생 클래스에 생성자 함수를 사용하고 싶다면 반드시 super 함수를 사용해야합니다.
+- 파생클래스에 생성자 함수가 없다면 super 함수가 자동으로 호출되어 부모 클래스의 프로퍼티를 상속 받게 합니다.
+- 생성자 함수에서 this 값을 사용할 경우 super 함수는 반드시 this 보다 먼저 실행되어야 합니다.
+- 파생 클래스가 아닌 클래스에서 사용하려고 해도 에러가 발생합니다. -->

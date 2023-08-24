@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>소시지를 만드는 클래스</title>
+</head>
+<body>
+ <script>
+
+class Sausage {
+    constructor(taste1, taste2) {
+        this.taste1 = taste1;
+        this.taste2 = taste2;
+        this.name = `${taste1} ${taste2} 소세지`
+    }
+    taste() {
+        console.log(`소세지에서 ${this.item1}와 ${this.item2}의 맛이 난다!`);
+    }
+}
+
+class FiresSausage extends Sausage {
+  // taste() {
+  //       console.log(`${this.taste1}와  ${this.taste2}맛이 난다!`);
+  //   }
+      //   firetaste() {
+      //     this.taste(); //  console.log(`${this.taste1}와  ${this.taste2}맛이 난다!`);
+      //     console.log(`불맛이 난다!`);
+      // }
+      // 오버라이딩 , 부모의 메소드의 내용을 덮어쓴다. 메소드 이름을 같게하면
+      taste(msg) { // 인자가 전달되는 함수와 안자를 전달하지 않는 함수와 구분을 하지않는다. 다른 언어는 구분한 (오버로딩)
+       // 때문에 여기서 msg는 undefined로 출력
+    
+        // 오버로딩 테크닉. 전달인자에 따라 다른 결과를 처리하도록 만들어 줍니다.
+        if (msg) {
+            console.log(
+                `소세지에서 불맛이 어우러진 ${this.item1}와 ${this.item2}의 맛이 난다!! ${msg} 때문인것 같다!`
+            );
+        } else {
+            console.log(
+                `소세지에서 불맛이 어우러진 ${this.item1}와 ${this.item2}의 맛이 난다!!`
+            );
+        }
+    }
+    }
+
+const firesSausage = new FiresSausage('소고기' , '파');
+
+// firesSausage
+// FiresSausage {taste1: '소고기', taste2: '파', name: '소고기 파 소세지'}
+//firesSausage.taste()
+//  소세지에서 불맛이 어우러진 소고기와  파맛이 난다!
+ </script>
+</body>
+</html>
+<!-- sausage
+FiresSausage {taste1: '소고기', taste2: '파'} -->
+<!-- - 실습 : 소시지를 만드는 클래스를 정의해봅시다.
+1. 생성자 함수는 두 가지 매개변수를 전달 받을 수 있으며 전달되는 매개변수에 따라 소시지의 맛이 결정됩니다.
+2. 소시지 객체는 taste 라는 메서드가 존재합니다. 생성자함수에서 전달받은 재료에 따라 맛을 나타내는 콘솔로그를 출력하는 역할을 합니다. (예시 : ‘소고기’ 와 ‘파’ 를 매개변수로 전달하였을 경우, ‘소고기와 파 맛이 난다!’ 는 콘솔 메세지를 출력합니다.)
+3. 소시지 클래스를 상속받는 FiresSausage 파생클래스를 생성해봅니다. 파생클래스의 taste 메서드를 실행하면 콘솔 메세지에 불맛이 나기 시작합니다. -->

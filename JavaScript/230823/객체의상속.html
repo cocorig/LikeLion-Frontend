@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+ 
+ <script>
+  const obj = {
+  name: 'test'
+  }
+
+  console.log(obj.hasOwnProperty('name'));
+
+  const arr = [1,2,3];
+
+  console.log(arr.hasOwnProperty('name'));
+
+  const object1 = {};
+  object1.property1 = 42;
+
+  console.log(object1.hasOwnProperty('property1'));
+  // Expected output: true
+
+  console.log(object1.hasOwnProperty('toString'));
+  // Expected output: false
+
+  console.log(object1.hasOwnProperty('hasOwnProperty'));
+  // Expected output: false
+  console.log(Array.prototype.__proto__ === Object.prototype);
+  console.log(Number.prototype.__proto__ === Object.prototype);
+  console.log(String.prototype.__proto__ === Object.prototype);
+  console.log(Math.__proto__ === Object.prototype);
+
+  // Array는prototype.__proto_를상속받기 때문에 hasOwnProperty을 사용할 수 있다는 것
+    // arr 가 hasOwnProperty를 사용할수 있는것은 prototype 을 통해서 상속 받았기 때문!!
+ 
+
+    function Parent() {
+        this.name = '재현';
+    }
+    Parent.prototype.rename = function (name) {
+        this.name = name;
+    }
+    Parent.prototype.sayName = function () {
+        console.log(this.name);
+    }
+// 부모의 프로퍼티의 자식 프로퍼티로 사용할 수 있다
+    function Child() {
+      Parent.call(this) //Child의 this를 가리킴 
+      this.newName = '코코'
+    }
+
+    Child.prototype = Object.create(Parent.prototype);
+    Child.prototype.hello = function(){
+
+      console.log('hello');
+    }
+    
+// child.hello()
+// hello
+// Child {name: '재현', newName: '코코'}
+
+const child = new Child();
+// child.name
+// '재현'
+// child.__proto__
+// Parent {}
+// child.sayName()
+// 객체의상속.html:49 재현
+ </script> 
+</body>
+</html>
+
+<!-- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/hasOwnProperty -->
+<!-- 
+arr                                
+(3) [1, 2, 3]0: 11: 22: 3length: 3[[Prototype]]: Array(0)at: ƒ at()concat: ƒ concat()constructor: ƒ Array()copyWithin: ƒ copyWithin()entries: ƒ entries()every: ƒ every()fill: ƒ fill()filter: ƒ filter()find: ƒ find()findIndex: ƒ findIndex()findLast: ƒ findLast()findLastIndex: ƒ findLastIndex()flat: ƒ flat()flatMap: ƒ flatMap()forEach: ƒ forEach()includes: ƒ includes()indexOf: ƒ indexOf()join: ƒ join()keys: ƒ keys()lastIndexOf: ƒ lastIndexOf()length: 0map: ƒ map()pop: ƒ pop()push: ƒ push()reduce: ƒ reduce()reduceRight: ƒ reduceRight()reverse: ƒ reverse()shift: ƒ shift()slice: ƒ slice()some: ƒ some()sort: ƒ sort()splice: ƒ splice()toLocaleString: ƒ toLocaleString()toReversed: ƒ toReversed()toSorted: ƒ toSorted()toSpliced: ƒ toSpliced()toString: ƒ toString()unshift: ƒ unshift()values: ƒ values()with: ƒ with()Symbol(Symbol.iterator): ƒ values()Symbol(Symbol.unscopables): {at: true, copyWithin: true, entries: true, fill: true, find: true, …}[[Prototype]]: Object -->
+
+<!-- [Prototype]]는 __proto_ 이다. __proto_ 은 생성자 함수의 프로토타입임 -->
+<!-- 배열 arr의 __proto__ 가 Array함수의 __proto__를 참조하고, Array함수의 __proto__ 가 Object 함수의 __proto__ 를 참조하고 있기 때문에 Array의 prototype에 존재하지 않는 Object 객체의 프로퍼티와 메서드를 사용할 수 있습니다. 이처럼 자기 자신에게 존재하지 않는 프로퍼티나 메서드를 프로토타입을 통해 추적하는 과정을 프로토타입 체이닝이라고 합니다.  arr가 프로토타입을 상속받는다-->
+
+<!-- 함수는 프로토타압, 인스턴스는 프로토 -->

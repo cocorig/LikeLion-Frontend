@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>classes</title>
+</head>
+<body>
+ <script>
+
+class Robot {
+        constructor(name) {
+            this.myName = name;
+        }
+
+        sayYouName() {
+            console.log(`제 이름은 ${this.myName} 입니다 삐리비리리비리`);
+        }
+    }
+const robot = new Robot('하연');
+
+// 실습 : 우리가  만들어본 여러분 자신의 생성자 함수를 class 문법으로 변경해봅시다.
+  // function Me(myAddress) {
+    //     this.name = "재현";
+    //     this.address = myAddress;
+    //     this.phoneNum = '010-8000-0000';
+    //     function canWalk() { };
+    // }
+
+    // Me.prototype.canWalk = function () {
+    //     console.log('재현이가 걷는다.');
+    // };
+
+    // Me.prototype.teaching = function (student) {
+    //     student.levelUp();
+    // }
+
+    // function Lion() {
+    //     this.level = 1;
+    // }
+
+    // Lion.prototype.levelUp = function () {
+    //     this.level++;
+    // }
+class Me {
+    constructor(myAddress) {
+        this.name = "재현";
+        this.address = myAddress;
+        this.phoneNum = '010-8000-0000';
+    }
+
+    canWalk() {
+        console.log('재현이가 걷는다.');
+    };
+
+    teaching(student) {
+        student.levelUp();
+    }
+}
+
+class Lion {
+    constructor() {
+        this.level = 1;
+    }
+
+    levelUp() {
+        this.level++;
+    }
+    }
+
+
+
+
+
+
+// 실습 : 우리가 위에서 만들어본 여러분 자신의 생성자 함수를 class 문법으로 변경해봅시다.
+
+
+//생성자함수로 생성
+
+// function CatButler(){
+//   this.name = '하연'; // 프로퍼티 등록
+// }
+// //  프로토타입으로 메소드 등록 
+// CatButler.prototype.playWith = function(pet){
+//     pet.intimacyUP();
+// }
+
+// function Mycat(){
+//   this.name = 'coco';
+//   this.intimacy  = 100;
+// }
+// Mycat.prototype.name =  'coco'; // prototype으로 바꾸면 모든 인스턴스는 같은 값을 바라보게된다.
+// Mycat.prototype.intimacyUP = function(){
+//     this.intimacy += 100;
+// }
+
+
+//class로 생성
+class CatButler{
+  constructor(name){
+    this.name = name;
+  }
+  playWith(pet){
+    pet.intimacyUP(this.name);
+  }
+}
+
+class Mycat{
+  constructor(name,intimacy){
+    this.name = name;
+    this.intimacy = intimacy;
+  }
+  intimacyUP(butler){
+    
+    console.log(`😸 ${this.name}와  🙋‍♀️ ${butler}의 친밀도가 ${this.intimacy += 100}으로 올랐습니다!`);
+  }
+}
+// 인스턴스 생성
+const butler = new CatButler('하연');
+const cat = new Mycat('coco' , 100);
+butler.playWith(cat)
+butler.playWith(cat)
+butler.playWith(cat)
+
+
+ </script>
+</body>
+</html>
