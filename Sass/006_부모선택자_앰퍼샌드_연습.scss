@@ -1,0 +1,28 @@
+nav{
+  ul{
+    border: solid 1px black;
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    font-size: 3rem;
+
+    li{
+      list-style: none;
+      &:first-child{
+        border: 1px solid deeppink 
+      }
+      &:nth-child(1){
+        background-color: rgb(119, 115, 220);
+      }
+      &:nth-child(2){
+        background-color: rgb(151, 221, 151);
+      }
+      &:nth-child(3){
+        background-color: rgb(247, 146, 208);
+      }
+      &:hover{
+        color: black;
+      }
+    }
+  }
+}

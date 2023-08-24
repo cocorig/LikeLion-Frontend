@@ -1,0 +1,16 @@
+/* 여러줄 주석은 볼 수 있습니다. */
+// onde > .tow > .three
+.one{
+  color : red;
+  .tow {
+    color : green;
+    .three{
+      color: blue;
+    }
+  }
+}
+
+// node sass -> 협업 할 때
+
+// 앞에 _가 되어있는 것들은 컴파일이 되지않는다.
+// 실제 컨파일이되는 파일은 style.scss

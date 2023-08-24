@@ -1,0 +1,44 @@
+.article {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+  .article-content {
+    font-size: 14px;
+    opacity: 0.7;
+    @at-root i { ///*css에서 중첩을 빠져나온 것을 확인할 수 있다.*/
+      opacity: 0.5;
+    }
+  }
+}
+
+// at-root은 저는 잘 사용하지 않습니다.
+
+.one {
+  color: red;
+
+  .two {
+    color: green;
+
+    .three {
+        color: blue;
+
+        @at-root .four {
+            color: pink;
+        }
+    }
+  }
+}
+
+// .one {
+//     color: red;
+//     .two {
+//         color: green;
+//         .three {
+//             color: blue;
+//         }
+//     }
+// }
+// .four {
+//     color: pink;
+// }

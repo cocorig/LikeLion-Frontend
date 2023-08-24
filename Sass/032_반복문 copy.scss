@@ -1,0 +1,13 @@
+// for ($변수) from (시작) through(끝){
+//     // 반복할 내용
+// }
+
+$test-array: 'top' 'right' 'bottom' 'left';
+
+@each $position in $test-array{
+    .border-#{$position}{
+        border-#{$position} : 1px solid #000;
+    }
+}
+
+// for of , foreach와 비슷  요소를 가져오니까

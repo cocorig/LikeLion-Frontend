@@ -1,0 +1,29 @@
+// Scss
+// .box {
+//     &:focus {}
+//     // 가상선택자
+//     &:hover {}
+//     &:active {}
+//     &:first-child {}
+//     &:nth-child(2) {}
+//     &::after {}
+//     // 가상요소
+//     &::before {}
+// }
+// "&"는 상위에 있는 부모선택자를 가리킵니다.
+
+// 1) `&`을 이용하여  after, hover 등의 가상요소, 가상클래스, class나 id 셀렉터 등을 참조할 수 있습니다.
+ul {
+  li {
+      &:hover {
+          background: white;
+          cursor: pointer;
+          // 가상요소 
+      }
+
+      &:last-child {
+          border-bottom: 2px solid black;
+          // 가상클래스 
+      }
+  }
+}
