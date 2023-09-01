@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+ <script>
+//resolve : 약속이 이루어졌을 때
+// reject : 약속이 이루어지지 않았을 때
+  const orderCoffee = new Promise((resolve ,  reject)=>{
+    const requestObj =  new XMLHttpRequest();
+    requestObj.open('GET', 'orderCoffee.txt');
+    requestObj.onreadystatechange =  ()=>{
+      if(requestObj.readyState === 4){ // 도착
+        if(requestObj.status === 200){ // 제대로 도착
+          //예외처리가 반드시 필요
+          const result = requestObj.responseText; // 
+          resolve(result);
+        }else{
+          reject(new Error(`오늘의 커피 원두가 다 떨어졌습니다. ${requestObj.status}`))
+        }
+      }
+    };
+    requestObj.send();
+  })
+
+
+  //프로미스는  비동기적인 코드를 동기적인 코드로 보여준다 . 
+  //  결과처리 코드
+  
+  // console.log(orderCoffee);
+  orderCoffee.then((asyncResult)=>{
+    console.log(asyncResult);
+  }).catch((error)=>{
+    console.log(error);
+  })
+  // then은 언제 실행될까?  resolve함수가 실행이되야 실행된다!!then이 실행하려면 resolve가 반드시 실행
+ </script>
+</body>
+</html>
