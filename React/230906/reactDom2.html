@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="root" class="container">
+        <h1>hello react</h1>
+        <a href="https:www.test.com">test site</a>
+    </div>
+
+
+    <script>
+        const tag = {
+            tag: 'div',
+            props: {
+                id: 'root',
+                className: 'container',
+            },
+            children: [
+                {
+                    tag: 'div',
+                    props: {
+                        id: 'root',
+                        className: 'container',
+                    },
+                    children: [
+                        {
+                            tag: 'div',
+                            props: {
+                                id: 'root',
+                                className: 'container',
+                            },
+                            children: [
+
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+
+// 리액트로 만드는 돔. JSX가 나오기 이전에 리액트는 아래처럼 돔을 생성했습니다. 여기서 리액트 팀이 라이브 돔을 어떻게 관리하고자 했는지 힌트를 얻을 수 있습니다.
+
+      
+   function helloVdom() {
+            return React.createElement(
+                'h1',  //// 첫번째 인자는 만들 요소의 종류
+                { className: 'container' }, // 두 번째 인자는 요소의 프로퍼티
+                'hello',   // 세번째 인자 이후로는 자식요소.
+                React.createElement(
+                    'i',
+                    null,
+                    'welcome!'
+                )
+            );
+        }
+        // 세번째 인자 이후로는 자식요소.
+        function helloJSX() {
+            return (
+                <h1 className="container">
+                    hello <i>welcome!</i>
+                </h1>
+            )
+        }
+
+
+
+    </script>
+</body>
+
+</html>
