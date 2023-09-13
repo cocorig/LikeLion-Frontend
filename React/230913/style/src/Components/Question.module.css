@@ -1,0 +1,26 @@
+/* div {
+  background: pink;
+}
+h2 {
+  width: 200px;
+  margin: 0 auto;
+  text-align: center;
+  color: lemonchiffon;
+} */
+
+.box {
+  background: pink;
+}
+/* .text {
+  width: 200px;
+  margin: 0 auto;
+  text-align: center;
+  color: lemonchiffon;
+} */
+ /* module에서 태그로 지정해주고 싶을 때에는 아래와 같은 양식을 사용합니다. */
+.box p{
+  font-size: 40px;
+}
+h2{
+  color: rgb(81, 65, 207);
+}
