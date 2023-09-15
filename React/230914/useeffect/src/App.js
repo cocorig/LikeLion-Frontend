@@ -11,11 +11,16 @@ import {useState, useEffect} from 'react'
 	// }
 // },[/*state값이 들어갑니다.(들어가지 않으면 최초 1번만 실행됩니다.*/)]) 
 
+
+
 function Counter (){
+
   const [count, setCount] = useState(0)
   const handleCountUp = (e) => {
     setCount(count + 1);
   }
+
+  //  Counter컴포넌트가 일어날 때 마다 매번 실행
   useEffect(()=>{
     console.log("이펙트~!");
     if (count%2===0) {
@@ -72,3 +77,21 @@ export default App;
 // 1초마다 setState후 interval추가 생성(2번일어남) -> 1초에 1번 setState 해주는 interval이 2개추가됨 -> 총 4개
 // 컴퓨터특성상 정확히 이런식으로 추가되진않지만
 // 이런 느낌으로 interval이 쌓이게 됩니다
+
+
+
+
+// 컴포넌트가 업데이트 될 때마다 매번 실행
+// useEffect(()=>{
+// 	console.log('hello world');
+// })
+
+// 처음에만 실행
+// useEffect(()=>{
+// 	console.log('hello world');
+// }, [])
+
+// 변수들의 변화가 일어날 때마다 실행
+// useEffect(()=>{
+// 	console.log('hello world');
+// }, [변수1, 변수2...])

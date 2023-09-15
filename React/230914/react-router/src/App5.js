@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route, Link, useLocation, Outlet } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Link, useLocation, Outlet, useParams } from "react-router-dom";
 
 function App() {
   return (
@@ -8,14 +8,14 @@ function App() {
       <Link to="/one"> one </Link>
       <Link to="/two"> two </Link>
       <Link to="/three"> three </Link>
-
+      <Link to="/blog/:id">blog</Link>
       
       {/* 라우트를 감싸줍니다. */}
       <Routes>
         <Route path="/" element={<Index />}/>
         <Route path="/one" element={<One name='licat' />}/>
         <Route path="/two" element={<Two />}/>
-
+      
         {/* Outlet : Route가 중첩이 서 사용될 때  */}
         <Route path="/three/*" element={<Outlet />}>
           {/* /three/ */}
@@ -25,7 +25,9 @@ function App() {
           {/* /three/hojuntwo/ */}
           <Route path="hojuntwo/" element={<HojunTwo/>}/>
         </Route>
-        <Route path="/blog/:id" element={<Blog />}/>
+
+
+        <Route path="/blog/:id" element={<Blog id='2' />}/>
       </Routes>
     </BrowserRouter>
   );
@@ -40,6 +42,8 @@ function One({name}){
 }
 
 function Two(){
+  const location = useLocation();
+  console.log(location)
   return <h1>hello world2</h1>
 }
 
@@ -47,9 +51,10 @@ function Three(){
   return <h1>hello world3</h1>
 }
 
-function Blog(){
+function Blog({props}){
+  console.log(props);
     const location = useLocation();
-  console.log(location)
+
   return <h1>hello Blog</h1>
 }
 

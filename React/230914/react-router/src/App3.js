@@ -50,3 +50,13 @@ export default App;
     state: { fromDashboard: true }
   }}
 /> */}
+
+// pathname: 이동할 경로를 나타내는 문자열입니다. 예를 들어, to="/about" 과 같이 사용할 수 있습니다
+
+// search: ?sort=name 이 포함된 /about 경로로 이동합니다.
+
+// to={{ pathname: '/about', hash: '#contact' }} 와 같이 객체 형태로 전달할 수 있습니다. 이 경우 /about#contact 경로로 이동합니다.
+
+// state: 이동할 경로와 함께 전달할 상태 정보입니다. to={{ pathname: '/about', state: { fromDashboard: true } }} 와 같이 객체 형태로 전달할 수 있습니다. 이 경우 /about 경로로 이동하면서 fromDashboard: true 라는 상태 정보를 함께 전달합니다.
+
+//  Link의 경우  HTML5 History API를 사용해서 브라우저의 주소를 바꿔주는 것이기 때문에 페이지를 불러오지 않고 dom만 조작해서 페이지를 보여줍니다.

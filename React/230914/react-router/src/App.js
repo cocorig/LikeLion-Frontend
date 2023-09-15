@@ -10,7 +10,7 @@ function App() {
         {/*Route :  URL이 변경되면  <Routes> 는 모든 자식 <Route>
 를 살펴보고 가장 알맞는 것을 매칭합니다. */}
         <Route path="/" element={<Index />}/>
-        <Route path="/one" element={<One />}/>
+        <Route path="/one" element={<One name = '하연'/>}/>
         <Route path="/two" element={<Two />}/>
         <Route path="/three" element={<Three />}/>
       </Routes>
@@ -22,8 +22,8 @@ function Index(){
   return <h1>hello world0</h1>
 }
 
-function One(){
-  return <h1>hello world1</h1>
+function One({name}){
+  return <h1>hello {name}</h1>
 }
 
 function Two(){
