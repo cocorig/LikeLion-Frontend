@@ -6,9 +6,9 @@ import { createRoot } from "react-dom/client";
 // import App4 from './App4';
 // import App5 from './App5';
 // import App6 from './App6';
-import App from './App';
+import App7 from './App7';
 
 
 const container = document.getElementById("root");
 const root = createRoot(container);
-root.render(<App />);
+root.render(<App7 />);
