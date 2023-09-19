@@ -3,9 +3,9 @@
   const inputSeconds = document.querySelector('.sec');
   const startButton = document.querySelector('.btn-start');
   const resetButton = document.querySelector('.btn-reset');
-  const hoursDisplay = document.getElementById('hoursDisplay');
-  const minutesDisplay = document.getElementById('minutesDisplay');
-  const secondsDisplay = document.getElementById('secondsDisplay');
+  const hoursDisplay = document.querySelector('.display-hrs');
+  const minutesDisplay = document.querySelector('.display-min');
+  const secondsDisplay = document.querySelector('.display-sec');
 
   let hours = 0;
   let minutes = 0;
@@ -19,6 +19,7 @@
     secondsDisplay.textContent = String(seconds).padStart(2, '0');
   }
 
+  
   function startTimer() {
     if (!isRunning) {
       hours = parseInt(inputHours.value) || 0;
