@@ -1,0 +1,159 @@
+/* reset */
+body,
+ul,
+li,
+h1,
+h2,
+h3,
+p {
+  padding: 0;
+  margin: 0;
+}
+img {
+  vertical-align: top;
+}
+h1,
+h2,
+h3 {
+  font: inherit;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  font: inherit;
+  border: 0;
+  background: none;
+}
+button:enabled {
+  cursor: pointer;
+}
+ul,
+li {
+  list-style: none;
+}
+input{
+  border: none;
+}
+
+@font-face {
+  font-family: 'Pretendard-Regular';
+  src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Pretendard-Bold';
+  src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+}
+/* 변수를 사용한 배경 설정 */
+
+body{
+  background-color:#A5B6EE;
+}
+
+h1 {
+  text-align: center;
+  margin-top: 72px;
+}
+h1 img{
+  display: inline-block;
+  max-width:  244px;
+  height: 48px;
+}
+
+main{
+  
+}
+.timer{
+  width: 400px;
+  height: 360px;
+  border-radius: 16px;
+  border-radius: 16px;
+  background: linear-gradient(144deg, #5572BB 2.13%, #374B7C 102.97%);
+  text-align: center;
+  margin: 60px  auto;
+
+  /* shadow */
+  box-shadow: 20px 20px 60px 10px rgba(55, 75, 124, 0.40);
+}
+
+.timer h2{
+  display: inline-block;
+  color: #FFF;
+  margin-top: 48px;
+  font-family: Pretendard;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  text-transform: uppercase;
+  
+}
+.line{
+  display: block;
+  width: 312px;
+  height: 1px;
+  background:#3D538A; 
+  margin : 23px 44px  33px  44px;
+}
+
+.time{
+  display: flex;
+  justify-content: center;
+  gap: 22px;
+}
+.time .times{
+  width: 80px;
+  height: 80px;
+  background-image: url(./img/box.svg);
+  
+}
+
+.time div{
+  display: flex;
+  flex-direction: column;
+}
+.time span{
+  color: #A5B6EE;
+  font-family: Pretendard;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+.time-btn{
+  margin-top: 40px;
+
+}
+.time-btn button{
+  width: 112px;
+  height: 48px;
+  border-radius: 50px;
+  background: #324577;
+  box-shadow: 1px 1px 1px 0px rgba(0, 0, 0, 0.05) inset;
+}
+.time-display{
+  color: #FFF;
+}
+.time-btn button:nth-child(1){
+  margin-right: 12px;
+}
+footer{
+  text-align: center;
+  color: #8596BF;
+  color: #8596BF;
+  font-family: Pretendard;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-transform: uppercase;
+}
