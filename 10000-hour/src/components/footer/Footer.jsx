@@ -1,5 +1,8 @@
 import React from 'react'
 import FooterImg from '../../images/weniv.png'
+import './Footer.css';
+
+
 function Footer() {
   return (
     <footer className="cont-footer">
