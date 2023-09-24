@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>객체지향 프로그래밍 실습</title>
+</head>
+<body>
+ <script>
+  // -- 절차지향 프로그래밍
+  // let name = '하연';
+  //     weapon = '검'
+
+  
+  // function attack(){
+  //   return `${name}님이 ${weapon}으로 공격합니다!!`;
+  // }
+
+  // function changeWeapon(){
+  //   weapon = '창';
+  //   return `무기가 ${weapon}으로 교체되었습니다!!`;
+  // }
+
+
+
+  // -- 객체지향 프로그래밍 -> 객체에 하나의 장소에 모아둔것 , 가독성이 좋아짐, 코드에 문제가 생기면 이 중괄호 안에만 수정하면 되기때문에 유지보수가 좋아진다.
+  // const knight = { // 중광호를 통해서 묶는다 -> encapsulation
+  //   name : "하연",
+  //   weapon :  '검',
+  //   attack(){
+  //     return `${this.name}님이 ${this.weapon}으로 공격합니다!!`
+  //   },
+  //   changeWeapon(newWeapon){
+  //     this.weapon =  newWeapon;
+  //     return `무기가 ${this.weapon}으로 교체되었습니다!!`;
+  //   }
+  // } 
+  // -> 이 코드의 문제점?? 
+  // 만약 knight가 100개 필요하면?? 똑같이 복사해서 새롭게 선언해서 써야한다. 메모리 낭비!!
+  // - 1. 객체가 필요할 때마다 새롭게 선언된다, 2. 똑같은 기능을 하는 함수가 반복되고 있다.
+  
+  // knight.changeWeapon('활')
+  // '무기가 활으로 교체되었습니다!!'
+  // knight.attack()
+  // '하연님이 활으로 공격합니다!!'
+
+
+  //encapsulation => 캡슐화한다. (데이터와 데이터를 조작하는 메서드들을 하나의 단위로 묶는것이다.)
+
+
+
+//  프로토타입으로 개선!!! -> 하지만 캡슐화가 안돼있음... 별갸의 코드처럼,,,
+
+  // function Knight(name , weapon) { // 중광호를 통해서 묶는다 -> encapsulation
+  //   this.name = name;
+  //   this.weapon  =  weapon;
+  // } 
+
+
+  // Knight.prototype.attack =  function () {
+  //   return `${this.name}님이 ${this.weapon}으로 공격합니다!!`
+  // }
+
+  // Knight.prototype.changeWeapon = function (newWeapon) {
+  //   this.weapon = newWeapon;
+  //   return `무기가 ${this.weapon}으로 교체되었습니다!!`;
+  // }
+  // const knight = new Knight('하연' , '검');
+  // console.log(knight.attack());
+  // console.log(knight.changeWeapon('마법봉'));
+  // knight.changeWeapon('마법봉')
+  // knight.attack();
+
+
+
+  //프로토타입의 문제점을  class로 바꿔보자!!!!
+
+  // 이처럼 내부적인 동작은 동일하지만 더 보기 좋고 편리하게 개선된 문법을 슈가신텍스 (Syntactic sugar) 라고 부릅니다.
+  class Knight{
+    constructor(name, weapon) {
+      this.name = name;
+      this.weapon = weapon;
+    }
+
+    attack() {
+      return `${this.name}님이 ${this.weapon}으로 공격합니다!!`
+    }
+    changeWeapon(newWeapon) {
+      this.weapon = newWeapon;
+      return `무기가 ${this.weapon}으로 교체되었습니다!!`;
+    }
+  }
+  //const knight =  new Knight('하연' , '하트봉');
+
+
+  class Skeleton extends Knight{
+    constructor(name, weapon , unitType) { // 자식만의 새로운 타입을 추가하는거 아니면 constructor자체 블록을 생략할 수 있다!!!
+        super(name, weapon);
+        this.unitType = unitType;
+    }
+  }
+  const skeleton = new Skeleton('재현' , '화살' , '악마');
+ </script>
+</body>
+</html>
