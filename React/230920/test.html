@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // [1, 1, 2, 3, 5, 8, 13 ........]
+        function fn(n) {
+            if (n === 1 || n === 2) {
+                return 1
+            } else {
+                return fn(n - 1) + fn(n - 2)
+            }
+        }
+
+        // fn(6)
+        // fn(5) + fn(4)
+        // fn(4) + fn(3) + fn(3) + fn(2)
+        // fn(3) + fn(2) + fn(2) + fn(1) + fn(2) + fn(1) + 1
+        // fn(2) + fn(1) + 1 + 1 + 1 + 1 + 1 + 1
+        // 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1
+        // 8
+// useMemo는 컴포넌트 성능 최적화에 사용됩니다. Memo는 memoization이라는 기법을 의미합니다.
+// 메모이제이션 기법을 사용하는 대표적인 예로 재귀함수의 피보나치 순열이 있는데요. 피보나치 수열을 재귀로 호출하게 되면 똑같은 결과의 함수 호출이 반복됩니다. 그런데 반복되는 동일한 결과값을 어딘가 저장하고, 원할 때 꺼낼 수 있다면 반복할 필요가 없겠죠? 이렇게 어떤 부하가 생기는 함수를 반복해서 작업할 때 기억해두었다가 사용하는 기법을 메모이제이션이라고 합니다.
+
+        // 메모이제이션 적용
+        const memo = [];
+
+        function fnMemo(n) {
+            if (n === 1 || n === 2) {
+                memo[n] = 1;
+                return 1
+            } 
+            else if (memo[n] !== undefined) {
+                return memo[n]
+            } else {
+                memo[n] = fnMemo(n - 1) + fnMemo(n - 2);
+                return memo[n]
+            }
+            // nullish 연산자 사용
+            // return memo[n] ?? (memo[n] = fnMemo(n-1) + fnMemo(n - 2));
+        }
+
+        console.log(fnMemo(6)); // 8
+        console.log(fnMemo(5)); // 5
+        console.log(fnMemo(4)); // 3
+        console.log(fnMemo(3)); // 2
+        console.log(fnMemo(2)); // 1
+        fnMemo(2) + fnMemo()
+
+        // memo[6] = fnMemo(5) + fnMemo(4);
+        // memo[5] = fnMemo(4) + fnMemo(3)
+        // memo[4] = fnMemo(3) + fnMemo(2)
+        // memo[3] = fnMemo(2) + fnMemo(1)
+        // memo[2] = fnMemo(1) + fnMemo(0)
+        // 2일땐 return 1;
+        // memo ==> [undefined, 1, 1, 2, 3, 5, 8];
+    </script>
+</body>
+
+</html>
+<!-- 
+// n = 6 일때 
+
+// 순서1
+// memo[6] = fnMemo(5) + fnMemo(4)
+// const memo = [ , , , , , , , fnMemo(5) + fnMemo(4)]
+
+// 순서2
+// fnMemo(5)
+// memo[5] = fnMemo(4) + fnMemo(3)
+// const memo = [ , , , , , , fnMemo(4) + fnMemo(3), fnMemo(5) + fnMemo(4)]
+
+// 순서3
+// fnMemo(4)
+// memo[4] = fnMemo(3) + fnMemo(2)
+// const memo = [ , , , , , fnMemo(3) + fnMemo(2), fnMemo(4) + fnMemo(3), fnMemo(5) + fnMemo(4)]
+
+
+
+// memo[6] = fnMemo(4) + fnMemo(3) + fnMemo(3) + fnMemo(2)
+//              ↓                        
+// 순서3 실행 후 memo[4]에 넣은 값을 재사용 할 수 있게된다! -->
