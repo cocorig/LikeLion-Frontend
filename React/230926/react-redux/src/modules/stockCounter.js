@@ -1,7 +1,7 @@
 export const sale = () =>{
   return {type : 'SALE'};
 };
-
+//  action을 함수로 작성함으로써 type의 오타를 막을 수 있다.
 export const soldout = () =>{
   return { type: "SOLD_OUT" };
 }

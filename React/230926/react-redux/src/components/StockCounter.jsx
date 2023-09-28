@@ -6,6 +6,7 @@ import { sale, soldout } from '../modules/stockCounter'
 
 export default function StockCounter() {
 
+  //  두개의 Selector를 하나로 합치면, 둘 중 하나만  실행되어도 같이 컨포넌트가 렌더링된다. 따로 분리해서 실행해야 함.
    // useSelector : store의 상태 조회 Hook
     const { message } = useSelector((state) => {
     return {
