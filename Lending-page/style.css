@@ -46,5 +46,40 @@ li {
   padding: 0;
   position: absolute;
 }
+* {
+  font-size: 16px;
+  font-family: Pretendard;
+}
 
 /* header */
+.header{
+  padding: 23px 250px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  background-color: coral;
+}
+.header .logo{
+  width: 100px;
+  height: 28px;
+}
+.header .logo a{
+  display: block;
+  height: 100%;
+  width: 100%;
+}
+.header nav ul{
+  display: flex;
+  flex-direction: row;
+  gap: 81px;
+}
+.header .register{
+  display: flex;
+}
+.header .register a{
+  display: block;
+  display: flex;
+  padding: 6px 14px;
+  border-radius: 20px;
+  background: #EEE;
+}
