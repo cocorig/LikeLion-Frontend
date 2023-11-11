@@ -10,7 +10,7 @@ let ghost = document.createElement("div");
 let player = {
   x: 0,
   y: 0,
-  speed: 2,
+  speed: 5,
 };
 
 const start = () => {
@@ -26,16 +26,16 @@ const start = () => {
 // requestAnimationFrame : 애니메이션을 부드럽게 처리해주는 함수
 
 const playGame = () => {
-  if (keys.ArrowLeft) {
+  if (keys.ArrowLeft && player.x > 0) {
     player.x -= player.speed;
   }
-  if (keys.ArrowRight) {
+  if (keys.ArrowRight && player.x < gameArea.offsetWidth - ghost.offsetWidth) {
     player.x += player.speed;
   }
-  if (keys.ArrowUp) {
+  if (keys.ArrowUp && player.y > 0) {
     player.y -= player.speed;
   }
-  if (keys.ArrowDown) {
+  if (keys.ArrowDown && player.y < gameArea.offsetHeight - ghost.offsetHeight) {
     player.y += player.speed;
   }
   ghost.style.left = player.x + "px";
