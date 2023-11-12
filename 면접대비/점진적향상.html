@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+    <style>
+      .layout-grid {
+        display: grid;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container"></div>
+    <picture>
+      <source srcset="test.webp" type="image/webp" />
+      <!-- WebP 이미지 형식을 지원하는 경우 사용될 이미지 소스 -->
+      <source srcset="test.avif" type="image/avif" />
+      <!-- AVIF 이미지 형식을 지원하는 경우 사용될 이미지 소스 -->
+      <img src="test.jepg" alt="테스트 이미지입니다." />
+      <!-- WebP 및 AVIF를 지원하지 않는 경우 사용될 대체 이미지 -->
+    </picture>
+    <script>
+      const container = document.querySelector(".container");
+      console.log(container.style);
+      // CSSStyleDeclaration에서 브라우저가 지원하는 CSS 속성을 확인할 수 있음
+      if (container.style.grid !== undefined) {
+        container.classList.add("layout-grid"); // 브라우저가 CSS Grid를 지원하면 'layout-grid' 클래스 추가
+      } else {
+        container.classList.add("layout-flex"); // 그렇지 않으면 'layout-flex' 클래스 추가
+      }
+    </script>
+  </body>
+</html>
